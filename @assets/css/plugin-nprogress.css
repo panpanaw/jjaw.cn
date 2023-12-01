@@ -1,0 +1,8 @@
+/**
+* 切换页面显示进度条
+* https://v2.vuepress.vuejs.org/zh/reference/plugin/nprogress.html
+*/
+:root {
+    --nprogress-color: #29d;
+    --nprogress-z-index: 1031;
+}

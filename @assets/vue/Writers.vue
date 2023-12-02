@@ -22,6 +22,9 @@ const commitPersons = useCommitPersons();
         <div>{{ email }}</div>
       </div>
     </div>
+    <div v-else>
+      git暂时不可用!
+    </div>
   </div>
 </template>
 <style scoped>

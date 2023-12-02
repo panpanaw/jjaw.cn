@@ -18,11 +18,11 @@ const updatedTime = useUpdatedTime();
             <!-- 最多提交者和发布日期 -->
             <div>
                 <span class="article-author" v-if="commitMaxPerson">{{ commitMaxPerson.name }}</span>
-                <span v-if="commitMaxPerson">{{ commitMaxPerson.email }}</span>
+                <span v-if="commitMaxPerson" class="article-email">{{ commitMaxPerson.email }}</span>
             </div>
             <!-- 最后更新时间 -->
             <div>
-                <span v-if="updatedTime">最后更新 {{ tiemF(updatedTime) }}</span>
+                <span v-if="updatedTime" class="article-updatedTime">最后更新 {{ tiemF(updatedTime) }}</span>
             </div>
         </div>
         <!-- 文章 -->
@@ -32,6 +32,10 @@ const updatedTime = useUpdatedTime();
     </div>
 </template>
 <style scoped>
+.article-email,
+.article-updatedTime{
+  font-size: 0.9rem;
+}
 .article{
   /* background-color: var(--background-color); */
   margin-top: 1rem;

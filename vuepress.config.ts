@@ -22,22 +22,30 @@ export default defineUserConfig({
     pagePatterns: [
         "./articles/**/*.md"
     ],
-    onInitialized(app){
+    markdown: {
+        toc: {
+            level: [2, 3, 4]
+        },
+        headers:{
+            level: [2, 3, 4]
+        }
+    },
+    onInitialized(app) {
         // 从写文章路由
-        for(const page of app.pages){
+        for (const page of app.pages) {
             const articlesPath = `${__dirname}/articles/`;
-            if(!page.filePath?.startsWith(articlesPath)){
+            if (!page.filePath?.startsWith(articlesPath)) {
                 continue;
             }
             const articlesAPath = "/articles/";
-            if(!page.path?.startsWith(articlesAPath)){
+            if (!page.path?.startsWith(articlesAPath)) {
                 continue;
             }
-            let newPath = page.path.substring(articlesAPath.length-1);
-            if(newPath.endsWith(".html")){
-                newPath = newPath.substring(0,newPath.length-5)
+            let newPath = page.path.substring(articlesAPath.length - 1);
+            if (newPath.endsWith(".html")) {
+                newPath = newPath.substring(0, newPath.length - 5)
             }
-            if(!newPath.endsWith("/")){
+            if (!newPath.endsWith("/")) {
                 newPath += "/";
             }
             page.path = newPath;
@@ -46,7 +54,7 @@ export default defineUserConfig({
     /**
      * 不需要主题awa，空主题就ok
      */
-    theme: {name:"jjaw-cn-page"},
+    theme: { name: "jjaw-cn-page" },
     plugins: [
         /**
          * 自动注册布局
@@ -81,7 +89,7 @@ export default defineUserConfig({
          * https://v2.vuepress.vuejs.org/zh/reference/plugin/prismjs.html
          */
         prismjsPlugin({
-            preloadLanguages:[]
+            preloadLanguages: []
         }),
         /**
          * 获取git信息
@@ -111,17 +119,17 @@ export default defineUserConfig({
          * https://plugin-sitemap2.vuejs.press/zh/
          */
         sitemapPlugin({
-            hostname:hostName,
-            changefreq:"monthly"
+            hostname: hostName,
+            changefreq: "monthly"
         }),
         /**
          * eco 搜索引擎优化
          * https://plugin-seo2.vuejs.press/zh/
          */
         seoPlugin({
-            hostname:hostName,
-            isArticle:(page)=>{
-                return page.filePath?.startsWith(`${__dirname}/articles/`)?true:false;
+            hostname: hostName,
+            isArticle: (page) => {
+                return page.filePath?.startsWith(`${__dirname}/articles/`) ? true : false;
             }
         }),
         /**
@@ -129,8 +137,8 @@ export default defineUserConfig({
          * https://plugin-blog2.vuejs.press/
          */
         blogPlugin({
-            filter:(page)=>{
-                return page.filePath?.startsWith(`${__dirname}/articles/`)?true:false;
+            filter: (page) => {
+                return page.filePath?.startsWith(`${__dirname}/articles/`) ? true : false;
             },
         })
     ]

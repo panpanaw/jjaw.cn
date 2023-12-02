@@ -19,7 +19,7 @@ const commitPersons = useCommitPersons();
           </span>
           <span>次提交</span>
         </div>
-        <div>{{ email }}</div>
+        <!-- <div class="email">{{ email }}</div> -->
       </div>
     </div>
     <div v-else>
@@ -28,6 +28,9 @@ const commitPersons = useCommitPersons();
   </div>
 </template>
 <style scoped>
+/* .email{
+  font-size: 0.8rem;
+} */
 .timg {
   height: 1em;
   position: relative;

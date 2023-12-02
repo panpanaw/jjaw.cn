@@ -10,6 +10,7 @@ import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links'
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 import { sitemapPlugin } from "vuepress-plugin-sitemap2";
 import { seoPlugin } from "vuepress-plugin-seo2";
+import { blogPlugin } from "vuepress-plugin-blog2";
 
 const hostName = 'jjaw.cn';
 
@@ -123,5 +124,14 @@ export default defineUserConfig({
                 return page.filePath?.startsWith(`${__dirname}/articles/`)?true:false;
             }
         }),
+        /**
+         * 博客插件 列表 分类 标签
+         * https://plugin-blog2.vuejs.press/
+         */
+        blogPlugin({
+            filter:(page)=>{
+                return page.filePath?.startsWith(`${__dirname}/articles/`)?true:false;
+            },
+        })
     ]
 });

@@ -8,6 +8,8 @@ import { gitPlugin } from '@vuepress/plugin-git'
 import { tocPlugin } from '@vuepress/plugin-toc'
 import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links'
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+import { sitemapPlugin } from "vuepress-plugin-sitemap2";
+import { seoPlugin } from "vuepress-plugin-seo2";
 
 const hostName = 'jjaw.cn';
 
@@ -17,21 +19,29 @@ export default defineUserConfig({
     description: '这是我的第一个 VuePress 站点',
     public: `${__dirname}/public`,
     pagePatterns: [
-        "**/*.md",
-        "!.vuepress",
-        "!@assets",
-        "!@layouts",
-        "!@plugin",
-        "!@tags",
-        "!@theme",
-        "!node_modules",
-        "!public",
-        "!.gitignore",
-        "!package-lock.json",
-        "!package.json",
-        "!vuepress.client.ts",
-        "!vuepress.config.ts",
+        "./articles/**/*.md"
     ],
+    onInitialized(app){
+        // 从写文章路由
+        for(const page of app.pages){
+            const articlesPath = `${__dirname}/articles/`;
+            if(!page.filePath?.startsWith(articlesPath)){
+                continue;
+            }
+            const articlesAPath = "/articles/";
+            if(!page.path?.startsWith(articlesAPath)){
+                continue;
+            }
+            let newPath = page.path.substring(articlesAPath.length-1);
+            if(newPath.endsWith(".html")){
+                newPath = newPath.substring(0,newPath.length-5)
+            }
+            if(!newPath.endsWith("/")){
+                newPath += "/";
+            }
+            page.path = newPath;
+        }
+    },
     /**
      * 不需要主题awa，空主题就ok
      */
@@ -94,6 +104,24 @@ export default defineUserConfig({
         mdEnhancePlugin({
             //开启组件
             component: true,
+        }),
+        /**
+         * sitemap生成
+         * https://plugin-sitemap2.vuejs.press/zh/
+         */
+        sitemapPlugin({
+            hostname:hostName,
+            changefreq:"monthly"
+        }),
+        /**
+         * eco 搜索引擎优化
+         * https://plugin-seo2.vuejs.press/zh/
+         */
+        seoPlugin({
+            hostname:hostName,
+            isArticle:(page)=>{
+                return page.filePath?.startsWith(`${__dirname}/articles/`)?true:false;
+            }
         }),
     ]
 });

@@ -40,12 +40,10 @@ export function autoLayoutsPlugin(pathString: string): Plugin {
         clientConfigFile: `${__dirname}/client.js`,
         async onPrepared(app){
             let js = "";
-            for(let {name,path} of vueFiles){
-                js+=`import ${name} from "${path}"\n`;
-            }
+            js+"import { defineAsyncComponent } from 'vue'";
             js+="export const layouts = {"
-            for(let {name} of vueFiles){
-                js+=`${name},`;
+            for(let {name,path} of vueFiles){
+                js+=`${name}:defineAsyncComponent(() => import('${path}')),`;
             }
             js+="}";
             await app.writeTemp('auto-layouts/layouts.js', js);

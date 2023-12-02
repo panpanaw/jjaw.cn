@@ -38,7 +38,6 @@ const updatedTime = useUpdatedTime();
 }
 .article{
   /* background-color: var(--background-color); */
-  margin-top: 1rem;
   overflow: hidden;
   border: 0.1rem solid var(--border-color);
   border-radius: 0.5rem;

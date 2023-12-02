@@ -26,7 +26,7 @@ export default defineUserConfig({
         toc: {
             level: [2, 3, 4]
         },
-        headers:{
+        headers: {
             level: [2, 3, 4]
         }
     },

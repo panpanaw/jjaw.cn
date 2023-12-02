@@ -14,7 +14,6 @@ const frontmatter = usePageFrontmatter();
 .heard {
   text-align: center;
   padding: 0.5rem;
-  margin-top: 1rem;
   overflow: hidden;
   border: 0.1rem solid var(--border-color);
   border-radius: 0.5rem;

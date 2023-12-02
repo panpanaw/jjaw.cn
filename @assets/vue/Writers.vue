@@ -52,7 +52,6 @@ const commitPersons = useCommitPersons();
 
 .writers-body {
   border: 0.1rem solid var(--border-color);
-  margin-top: 1rem;
   overflow: hidden;
   border-radius: 0.5rem;
 }

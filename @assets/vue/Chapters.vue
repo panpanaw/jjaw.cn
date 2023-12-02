@@ -3,13 +3,18 @@
     <!-- 目录 -->
     <div class="nav-body">
         <div class="nav-title">目录</div>
-        <Toc/>
+        <Toc class="nav-toc" />
     </div>
 </template>
 <style scoped>
+.nav-toc{
+  display: block;
+  overflow-y: auto;
+  height: calc(100% - 2.6rem);
+}
 .nav-body {
+  height: 100%;
   border: 0.1rem solid var(--border-color);
-  margin-top: 1rem;
   overflow: hidden;
   border-radius: 0.5rem;
 }

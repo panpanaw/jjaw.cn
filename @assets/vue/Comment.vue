@@ -8,7 +8,7 @@ const frontmatter = usePageFrontmatter();
     <div class="comment-body">
         <div class="title">评论区</div>
         <GiscusComment class="comment" v-if="frontmatter.comment"></GiscusComment>
-        <div v-else>
+        <div v-else style="text-align: center;margin: 1rem;">
             评论区已关闭
         </div>
     </div>

@@ -1,10 +1,11 @@
 <!-- 类别布局 -->
 <!-- 标签 列表 -->
 <script setup lang="ts">
-import { useTags } from '../@assets/composables/Blog';
+import { useStars, useTags } from '../@assets/composables/Blog';
 import BlogList from '../@assets/vue/BlogList.vue';
 import Header from '../@assets/vue/Header.vue';
 const tags = useTags();
+const stars = useStars();
 
 </script>
 <template>
@@ -16,7 +17,11 @@ const tags = useTags();
                 <span class="num">{{ tiem.items.length }}</span>
             </RouterLink>
         </div>
-        <BlogList :list="tags.currentItems"></BlogList>
+        <BlogList v-if="tags.currentItems" :list="tags.currentItems"></BlogList>
+        <BlogList v-else-if="stars" :list="stars"></BlogList>
+        <div v-else style="text-align: center;">
+            没有任何文章
+        </div>
     </div>
     <div v-else>
         error

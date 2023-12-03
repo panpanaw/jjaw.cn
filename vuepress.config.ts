@@ -30,27 +30,6 @@ export default defineUserConfig({
             level: [2, 3, 4]
         }
     },
-    onInitialized(app) {
-        // 从写文章路由
-        for (const page of app.pages) {
-            const articlesPath = `${__dirname}/articles/`;
-            if (!page.filePath?.startsWith(articlesPath)) {
-                continue;
-            }
-            const articlesAPath = "/articles/";
-            if (!page.path?.startsWith(articlesAPath)) {
-                continue;
-            }
-            let newPath = page.path.substring(articlesAPath.length - 1);
-            if (newPath.endsWith(".html")) {
-                newPath = newPath.substring(0, newPath.length - 5)
-            }
-            if (!newPath.endsWith("/")) {
-                newPath += "/";
-            }
-            page.path = newPath;
-        }
-    },
     /**
      * 不需要主题awa，空主题就ok
      */

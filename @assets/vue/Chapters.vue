@@ -1,6 +1,5 @@
 <!-- 文章的章节和目录 -->
 <template>
-  <!-- 目录 -->
   <div class="nav-body">
     <div class="nav-title">目录</div>
     <Toc class="nav-toc" />

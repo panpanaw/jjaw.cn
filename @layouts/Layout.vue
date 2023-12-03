@@ -21,7 +21,7 @@ const topHeight:Ref<number|undefined> = ref(0);
         </div>
         <div class="rigth">
             <Writers  class="mtop"></Writers>
-            <Chapters class="chapters mtop"></Chapters>
+            <ClientOnly><Chapters class="chapters mtop"></Chapters></ClientOnly>
         </div>
     </div>
     <Footer></Footer>

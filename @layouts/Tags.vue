@@ -4,6 +4,7 @@
 import { useStars, useTags } from '../@assets/composables/Blog';
 import BlogList from '../@assets/vue/BlogList.vue';
 import Header from '../@assets/vue/Header.vue';
+import Footer from "../@assets/vue/Footer.vue";
 const tags = useTags();
 const stars = useStars();
 
@@ -23,9 +24,10 @@ const stars = useStars();
             没有任何文章
         </div>
     </div>
-    <div v-else>
+    <div class="tags" v-else>
         error
     </div>
+    <Footer></Footer>
 </template>
 
 <style scoped>

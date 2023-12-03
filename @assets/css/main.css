@@ -19,6 +19,7 @@
         --background-color1: #f6f8fa;
         --background-color-opacity: #ffffff47;
         --color-time1: #2e90ff;
+        --color-time2: rgb(0, 89, 255);
     }
 }
 
@@ -29,6 +30,7 @@
         --background-color1: rgb(0, 0, 0);
         --background-color-opacity: #00000047;
         --color-time1: #60aaff;
+        --color-time2: rgb(0, 89, 255);
     }
 }
 

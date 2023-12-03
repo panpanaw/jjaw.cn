@@ -84,7 +84,10 @@ export default defineUserConfig({
          * 页面滚动自动定位hash
          * https://v2.vuepress.vuejs.org/zh/reference/plugin/active-header-links.html
          */
-        activeHeaderLinksPlugin(),
+        activeHeaderLinksPlugin({
+            headerLinkSelector:".vuepress-toc-link",
+            headerAnchorSelector:".header-anchor"
+        }),
         /**
          * Markdown 增强
          * https://plugin-md-enhance.vuejs.press/zh/

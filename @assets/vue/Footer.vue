@@ -7,7 +7,7 @@
             <img src="../imgs/logo.png" style="height: 2rem;" />
         </div>
         <div><RouterLink to="/">神奇小破站 jjaw.cn</RouterLink></div>
-        <div><RouterLink to="/editor.html">文章编辑器</RouterLink></div>
+        <div><a href="/editor.html">文章编辑器</a></div>
         <div>图标真是随手画的</div>
     </div>
 </template>

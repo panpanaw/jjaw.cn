@@ -23,9 +23,7 @@ const tiemF = (tiem: number) => dateFormat(new Date(tiem), (Y, M, D, h, m) => `$
         </div>
     </div>
     <div v-else  class="list">
-        <div class="time">
-            没有任何东西
-        </div>
+        没有任何文章
     </div>
 </template>
 

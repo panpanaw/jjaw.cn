@@ -11,6 +11,7 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 import { sitemapPlugin } from "vuepress-plugin-sitemap2";
 import { seoPlugin } from "vuepress-plugin-seo2";
 import { blogPlugin } from "vuepress-plugin-blog2";
+import { giscusCommentPlugin } from './@plugin/giscus-comment';
 
 const hostName = 'jjaw.cn';
 
@@ -121,7 +122,7 @@ export default defineUserConfig({
         blogPlugin({
             getInfo(page) {
                 return {
-                    git:getGitInfo(page),
+                    git: getGitInfo(page),
                     title: page.frontmatter.title || page.title,
                     description: page.frontmatter.description
                 }
@@ -131,16 +132,69 @@ export default defineUserConfig({
             },
             type: [
                 {
-                    key: "star",
-                    filter({ frontmatter }){return frontmatter.star ? true : false},
-                    sorter(pa,pb){
+                    key: "stars",
+                    filter({ frontmatter }) { return frontmatter.star ? true : false },
+                    sorter(pa, pb) {
                         const ta = pa.data["git"]?.updatedTime || 0;
                         const tb = pb.data["git"]?.updatedTime || 0;
                         return tb - ta;
                     }
                 }
-            ]
-        })
+            ],
+            category: [{
+                key: "tags",
+                path: "/tags/",
+                layout: "Tags",
+                frontmatter(localePath){
+                    return {
+                        title: "标签页",
+                        description: "通过标签浏览文章列表."
+                    }
+                },
+                itemPath: "/tags/:name/",
+                itemLayout: "Tags",
+                itemFrontmatter(name, localePath) {
+                    return {
+                        title: `${name}标签`,
+                        description: `${name}标签的所有文章`
+                    }
+                },
+                getter(page) {
+                    const tags = page.data.frontmatter["tags"];
+                    if (Array.isArray(tags)) {
+                        return tags;
+                    }
+                    if ((typeof tags) == 'string') {
+                        return [tags]
+                    }
+                    return [];
+                },
+                sorter(pa, pb) {
+                    const ta = pa.data["git"]?.updatedTime || 0;
+                    const tb = pb.data["git"]?.updatedTime || 0;
+                    return tb - ta;
+                }
+            }]
+        }),
+        /**
+         * 评论区插件
+         * 注册一个全局异步GiscusComment组件
+         * 自己瞎写的 ./@plugin/giscus-comment
+         */
+        giscusCommentPlugin({
+            repo:"jianjianai/vue.js.jjaw.cn.articles",
+            repoId:"R_kgDOKsd6yQ",
+            category:"vue.js.jjaw.cn.articles",
+            categoryId:"DIC_kwDOKsd6yc4CbRMH" ,
+            mapping:"pathname" ,
+            strict:"0",
+            reactionsEnabled:"1" ,
+            emitMetadata:"1" ,
+            inputPosition:"bottom" ,
+            theme:"preferred_color_scheme" ,
+            lang:"zh-CN",
+            loading:"eager"
+        }),
     ]
 });
 

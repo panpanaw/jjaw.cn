@@ -5,6 +5,7 @@ import Chapters from "../@assets/vue/Chapters.vue";
 import ArticleIntro from "../@assets/vue/ArticleIntro.vue";
 import Writers from "../@assets/vue/Writers.vue";
 import {ref,type Ref} from 'vue'
+import Comment from "../@assets/vue/Comment.vue";
 
 const topHeight:Ref<number|undefined> = ref(0);
 
@@ -15,6 +16,7 @@ const topHeight:Ref<number|undefined> = ref(0);
         <div class="page">
             <ArticleIntro class="mtop"></ArticleIntro>
             <Article  class="mtop"></Article>
+            <Comment class="mtop"></Comment>
         </div>
         <div class="rigth">
             <Writers  class="mtop"></Writers>

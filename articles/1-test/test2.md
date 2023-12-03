@@ -3,7 +3,7 @@ title: 测试页面
 description: 测试，测试，测试，测试
 permalinkPattern: test2/
 sitemap: false
-# tag: ["测试"]
+# tags: ["测试"]
 # star: true
 ---
 

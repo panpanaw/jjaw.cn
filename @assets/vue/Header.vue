@@ -91,7 +91,7 @@ if (props.isAutoHide) {
       </RouterLink>
       <div class="rigth">
         <ul class="nav-ul">
-          <li><RouterLink to="/stars/" class="nav-link">精选</RouterLink></li>
+          <!-- <li><RouterLink to="/stars/" class="nav-link">精选</RouterLink></li> -->
           <li><RouterLink to="/tags/" class="nav-link">标签</RouterLink></li>
         </ul>
       </div>

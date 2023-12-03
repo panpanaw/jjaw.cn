@@ -1,10 +1,10 @@
-import { defineUserConfig } from 'vuepress'
+import { Page, defineUserConfig } from 'vuepress'
 import { autoLayoutsPlugin } from './@plugin/auto-layouts';
 import { homePagePlugin } from './@plugin/home-page';
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { nprogressPlugin } from '@vuepress/plugin-nprogress'
 import { prismjsPlugin } from '@vuepress/plugin-prismjs'
-import { gitPlugin } from '@vuepress/plugin-git'
+import { GitContributor, GitData, gitPlugin } from '@vuepress/plugin-git'
 import { tocPlugin } from '@vuepress/plugin-toc'
 import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links'
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
@@ -85,8 +85,8 @@ export default defineUserConfig({
          * https://v2.vuepress.vuejs.org/zh/reference/plugin/active-header-links.html
          */
         activeHeaderLinksPlugin({
-            headerLinkSelector:".vuepress-toc-link",
-            headerAnchorSelector:".header-anchor"
+            headerLinkSelector: ".vuepress-toc-link",
+            headerAnchorSelector: ".header-anchor"
         }),
         /**
          * Markdown 增强
@@ -119,9 +119,45 @@ export default defineUserConfig({
          * https://plugin-blog2.vuejs.press/
          */
         blogPlugin({
+            getInfo(page) {
+                return {
+                    git:getGitInfo(page),
+                    title: page.frontmatter.title || page.title,
+                    description: page.frontmatter.description
+                }
+            },
             filter: (page) => {
                 return page.filePath?.startsWith(`${__dirname}/articles/`) ? true : false;
             },
+            type: [
+                {
+                    key: "star",
+                    filter({ frontmatter }){return frontmatter.star ? true : false},
+                    sorter(pa,pb){
+                        const ta = pa.data["git"]?.updatedTime || 0;
+                        const tb = pb.data["git"]?.updatedTime || 0;
+                        return tb - ta;
+                    }
+                }
+            ]
         })
     ]
 });
+
+
+
+function getGitInfo(page: Page) {
+    const git = page.data["git"] as GitData | undefined;
+    if (!git) {
+        return undefined;
+    }
+    let commitMaxPerson: GitContributor | undefined = undefined;
+    if (git.contributors && git.contributors.length > 0) {
+        commitMaxPerson = git.contributors.sort((a, b) => b.commits - a.commits)[0];
+    }
+    let updatedTime = git.updatedTime;
+    return {
+        commitMaxPerson,//获取git提交最多的人
+        updatedTime,//文章的更新时间
+    }
+}

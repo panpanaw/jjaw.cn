@@ -1,5 +1,5 @@
 //文章分类集合
-import { useBlogType } from "vuepress-plugin-blog2/client";
+import { useBlogType,useBlogCategory } from "vuepress-plugin-blog2/client";
 import { computed } from "vue"
 import { GitContributor } from "@vuepress/plugin-git";
 
@@ -16,7 +16,7 @@ export interface MyTimes {
 }
 
 export function useStars() {
-    const blogref = useBlogType("star");
+    const blogref = useBlogType("stars");
     return computed(() => {
         if (!blogref || !blogref.value) {
             return undefined;
@@ -26,5 +26,24 @@ export function useStars() {
             return undefined;
         }
         return items as MyTimes[]
+    });
+}
+
+export function useTags(){
+    const categoryMap = useBlogCategory("tags");
+    return computed(()=>{
+        if(!categoryMap || !categoryMap.value){
+            return undefined;
+        }
+        return categoryMap.value as {
+            path:string,
+            map:{
+                [name:string]:{
+                    path:string,
+                    items:MyTimes[]
+                }
+            },
+            currentItems?:MyTimes[]
+        }
     });
 }

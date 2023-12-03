@@ -1,16 +1,17 @@
-<!-- 收藏/推荐 列表 -->
+<!-- 显示文章列表的组件 -->
 <script setup lang="ts">
-import { useStars } from '../composables/Blog';
+import { type MyTimes } from '../composables/Blog';
 import { dateFormat } from '../composables/Time';
-const props = defineProps<{title?:string}>();
-const stars = useStars();
+
+const props = defineProps<{ list?: MyTimes[] }>();
 const tiemF = (tiem: number) => dateFormat(new Date(tiem), (Y, M, D, h, m) => `${Y}-${M}-${D} ${h}:${m}`);
+
+
 
 </script>
 <template>
-    <div v-if="stars" class="stars">
-        <h3 class="title" v-if="props.title">{{ props.title }}</h3>
-        <div v-for="{ path,info } in stars" class="time">
+    <div v-if="props.list" class="list">
+        <div v-for="{ path, info } in props.list" class="time">
             <RouterLink :to="path">
                 <h4>{{ info.title }}</h4>
                 <div v-if="info.git && (info.git.updatedTime || info.git.commitMaxPerson)" class="tiem-person">
@@ -21,7 +22,13 @@ const tiemF = (tiem: number) => dateFormat(new Date(tiem), (Y, M, D, h, m) => `$
             </RouterLink>
         </div>
     </div>
+    <div v-else  class="list">
+        <div class="time">
+            没有任何东西
+        </div>
+    </div>
 </template>
+
 <style scoped>
 .title {
     text-align: center;
@@ -68,7 +75,7 @@ const tiemF = (tiem: number) => dateFormat(new Date(tiem), (Y, M, D, h, m) => `$
     font-size: 2rem;
 }
 
-.stars {
+.list {
     padding-top: 2rem;
     padding-bottom: 2rem;
     display: flex;
@@ -80,7 +87,7 @@ const tiemF = (tiem: number) => dateFormat(new Date(tiem), (Y, M, D, h, m) => `$
 }
 
 @media(max-width: 790px) {
-    .stars {
+    .list {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;

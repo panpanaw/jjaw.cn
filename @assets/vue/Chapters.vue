@@ -48,7 +48,7 @@
 
 
 .vuepress-toc-item {
-  margin: 0.5rem 0;
+  margin: 0.7rem 0;
 }
 
 .vuepress-toc-link {

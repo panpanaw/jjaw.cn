@@ -114,6 +114,10 @@ export default defineUserConfig({
             imgSize: true,
             // 启用提示容器
             hint: true,
+            // 启用任务列表
+            tasklist: true,
+            // 启用代码块分组
+            codetabs: true,
         }),
         /**
          * sitemap生成

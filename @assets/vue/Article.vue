@@ -1,6 +1,6 @@
 <!-- 篇文章 -->
 <script setup lang="ts">
-import 'github-markdown-css'
+import '../css/github-markdown.css'
 import '../css/jjaw-prismjs.css'
 import '../css/md-enhance-hint.css'
 import { dateFormat } from '../composables/Time';

@@ -3,6 +3,7 @@
 import '../css/github-markdown.css'
 import '../css/jjaw-prismjs.css'
 import '../css/md-enhance-hint.css'
+import '../css/md-enhance-codetabs.css'
 import { dateFormat } from '../composables/Time';
 import { useCommitMaxPerson ,useUpdatedTime} from '../composables/ArticleInformations';
 

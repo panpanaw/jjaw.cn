@@ -97,6 +97,7 @@ export default defineUserConfig({
         mdEnhancePlugin({
             //开启组件
             component: true,
+            tabs: true,
         }),
         /**
          * sitemap生成

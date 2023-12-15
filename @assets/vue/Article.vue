@@ -51,7 +51,7 @@ const updatedTime = useUpdatedTime();
   padding-left: 1rem;
   padding-right: 1rem;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;

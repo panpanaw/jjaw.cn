@@ -44,6 +44,7 @@ const commitPersons = useCommitPersons();
 .writer {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .writers {

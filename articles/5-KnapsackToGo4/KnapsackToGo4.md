@@ -9,7 +9,7 @@ description: KTG4是基于bukkitAPI的我的世界服务器跨服同步插件，
 star: true
 
 # 标签
-tags: ["mc插件"]
+tags: ["mc插件","mc"]
 
 # sitemap 如果为 false 则不写入
 # 更新频率 changefreq -> "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"
@@ -166,7 +166,7 @@ KnapsackToGo4使用的独占锁的方式，当玩家在一个服务器中的时�
 
 <Demo title="插件实验室交流频道">
 <div class="lineDiv">
-<div><img src="./imgs/3.png"></div>
+<div><img src="./imgs/3.webp"></div>
 <div style="padding: 1rem;">
 
 ### PlugClub / 插件实验室
@@ -185,7 +185,7 @@ qq群：820131534 (已满)
 
 ### 快速完成配置
 首先下载最新版KnapsackToGo4放到服务器的plugins文件夹，启动服务器，插件会在plugins文件夹下的KnapsackToGo4目录中创建默认配置。之后关闭服务器，打开KnapsackToGo4文件夹。
-![Alt text](./imgs/5.png)
+![Alt text](./imgs/5.webp)
 
 #### 配置数据容器（同步方式）
 数据容器是存储数据的方式。用来存数据。比如记录文字可以用纸和笔，也可以用电脑或手机，还可以刻在石头上。
@@ -471,7 +471,7 @@ file数据容器，是使用操作系统的文件锁。在数据被锁时会生�
 lockserver中的LockToTime是锁到期时间，在线的服务器会在到期之前自动续期。如果时间到期就会认为此锁已经失效。
 
 playerdata的LockUUID是指向lockserver的LockUUID的，如下图所示。
-![playerdata的LockUUID是指向lockserver的LockUUID](./imgs/4.png)
+![playerdata的LockUUID是指向lockserver的LockUUID](./imgs/4.webp)
 
 如果你在mysqlCaseSetUp.yaml中或sqliteCaseSetUp.yaml设置了每个服务器的serverName那么，这样就可以找到玩家是被什么服务器锁了。
 

@@ -1,5 +1,5 @@
 ---
-title: 纯css实现打字效果详解
+title: 纯css实现打字效果详解,任意字符排列排列组合。
 description: 纯css实现拼音打字效果详解。全网最简单,10分钟不到秒懂! 任意字符排列排列组合。
 head: 
     - [meta, { name: keywords , content: css动画 前端技术 ::before 伪元素 }]

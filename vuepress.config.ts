@@ -38,6 +38,8 @@ export default defineUserConfig({
      * 不需要主题awa，空主题就ok
      */
     theme: { name: "jjaw-cn-page" },
+    templateBuild:"./build.html",
+    templateDev:"./dev.html",
     plugins: [
         /**
         * 颜色模式切换插件，某些插件用到了vuepress自带主题的颜色模式，这个插件从默认主题修改而来。在html标签添加对应颜色class

@@ -2,26 +2,32 @@
 import Article from "../@assets/vue/Article.vue";
 import Comment from "../@assets/vue/Comment.vue";
 import { useSiteLocaleData } from '@vuepress/client';
+import { useGithubEditUrl, useGithubEditTitle } from "../@plugin/github-edit/githubedit";
 const siteData = useSiteLocaleData();
+const githubEditUrl = useGithubEditUrl();
+const githubEditTitle = useGithubEditTitle();
 
 </script>
 <template>
     <div class="page-main">
         <div class="page">
-            <div class="main-div">
-                <div>
-                    <RouterLink class="logo" to="/">
-                        <img src="../@assets/imgs/logo.png">
-                        <h3>{{ siteData.title }}</h3>
-                    </RouterLink>
-                </div>
-                <div class="article goEdit">
-                    <h3>KnapsackToGo4:强大的跨服数据同步插件第4代。</h3>
-                    <div class="gotoedit">
-                        <div>编辑此文章，成为贡献者 >>></div>
+            <ClientOnly>
+                <div class="main-div">
+                    <div>
+                        <RouterLink class="logo" to="/">
+                            <img src="../@assets/imgs/logo.png">
+                            <h3>{{ siteData.title }}</h3>
+                        </RouterLink>
                     </div>
+                    <a class="article goEdit" :href="githubEditUrl" target="_blank">
+                        <h3>前往Github编辑文章</h3>
+                        <h3>{{ githubEditTitle }}</h3>
+                        <div class="gotoedit">
+                            <div>编辑此文章 >>></div>
+                        </div>
+                    </a>
                 </div>
-            </div>
+            </ClientOnly>
             <Article class="mtop"></Article>
             <Comment class="mtop"></Comment>
         </div>
@@ -42,10 +48,12 @@ const siteData = useSiteLocaleData();
     transition: all 1s;
     background-color: var(--background-color2);
 }
-.gotoedit:hover{
+
+.gotoedit:hover {
     transition: all 0.5s;
     box-shadow: 1px 2px 10px -3px var(--color-opacity);
 }
+
 .main-div {
     display: flex;
     min-height: 75vh;
@@ -56,6 +64,8 @@ const siteData = useSiteLocaleData();
 }
 
 .goEdit {
+    color: var(--color);
+    text-decoration: none;
     padding: 2rem;
     display: flex;
     align-items: center;

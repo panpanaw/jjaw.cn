@@ -22,7 +22,6 @@ export function githubEditPlugin(
             page.data["github_edit"] = ((o: github_edit) => o)({
                 filePathRelative: page.filePathRelative
             });
-            console.log(page.filePathRelative)
         }
     }
 }

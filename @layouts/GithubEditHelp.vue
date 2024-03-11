@@ -15,7 +15,7 @@ const githubEditTitle = useGithubEditTitle();
                 <div class="main-div">
                     <div>
                         <RouterLink class="logo" to="/">
-                            <img src="../@assets/imgs/logo.png">
+                            <img src="../@assets/imgs/logo.svg">
                             <h3>{{ siteData.title }}</h3>
                         </RouterLink>
                     </div>

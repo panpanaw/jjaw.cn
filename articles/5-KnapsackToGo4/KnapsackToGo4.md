@@ -115,7 +115,7 @@ KTG4是基于bukkitAPI的我的世界服务器跨服同步插件，全称Knapsac
 ### KnapsackToGo4通过扩展可以支持MOD数据同步
 
 #### ktg4作者编写的扩展下载列表
-[https://gitee.com/jja8/KnapsackToGo4Plugin/releases](KnapsackToGo4Plugin)
+[KnapsackToGo4Plugin](https://gitee.com/jja8/KnapsackToGo4Plugin/releases)
 
 #### NMSserialize
 NMSserialize是KnapsackToGo4的数据序列化扩展，

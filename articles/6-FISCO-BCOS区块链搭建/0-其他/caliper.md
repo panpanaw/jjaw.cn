@@ -11,6 +11,11 @@ description: java调用通过webase-front调用合约
 comment: true
 ---
 
+## 安装docker
+``` shell
+sudo apt install docker.io
+```
+
 ## 将当前用户添加到docker组
 ``` shell
 # 修改docker.sock权限为root:docker

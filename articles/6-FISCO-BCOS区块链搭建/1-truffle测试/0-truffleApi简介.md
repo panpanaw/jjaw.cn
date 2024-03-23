@@ -1,16 +1,20 @@
 # truffleApi简介
 
-**Truffle** 为与智能合约进行交互提供了**合约抽象**。如果你想了解合约的方法列表，请直接跳转到 API 部分。
+[用JavaScript写测试用例](./1-truffle用JavaScript写测试用例.md)
+[truffle初步入门](./2-truffle初步入门.md)
+
+
+**Truffle** 为与智能合约进行交互提供了**合约类**。如果你想了解合约的方法列表，请直接跳转到 API 部分。
 
 ## 使用方法
 
-要获取合约抽象，你可以使用 **artifacts** 对象的require函数通过合约名称来引入它。在控制台之外，这迁移文件、测试和执行脚本中的一个对象。你可以按照以下方式引入你的合约：
+要获取合约类，你可以使用 **artifacts** 对象的require函数通过合约名称来引入它。在控制台之外，这迁移文件、测试和执行脚本中的一个对象。你可以按照以下方式引入你的合约：
 
 ``` javascript
 const MyContract = artifacts.require("MyContract");
 ```
 
-控制台中或测试脚本中获取合约抽象。你只需使用 **at**、**deployed** 或 **new** 方法即可：
+控制台中或测试脚本中获取合约类。你只需使用 **at**、**deployed** 或 **new** 方法即可：
 
 ``` javascript
 const myContract = await MyContract.deployed();
@@ -69,22 +73,22 @@ example
 
 ## API
 
-常用的API有两个。一个是**静态API**，另一个是**实例API**。**静态API** 是一组适用于所有合约对象的函数，这些函数存在于对象本身上（例如，`MyContract.at()`）。相比之下，**实例 API** 是可用于合约实例的API，即表示网络上特定合约的实例，该API是基于Solidity源文件中可用的函数动态创建的。
+常用的API有两个。一个是**类API**，另一个是**实例API**。**类API** 是一组适用于所有合约对象的函数，这些函数存在于对象本身上（例如，`MyContract.at()`）。相比之下，**实例 API** 是可用于合约实例的API，即表示网络上特定合约的实例，该API是基于Solidity源文件中可用的函数动态创建的。
 
-### 静态API
-每个静态对象（例如上面的 MyContract）都具有以下可用的函数：
+### 类API
+每个类对象（例如上面的 MyContract）都具有以下可用的函数：
 
 #### `MyContract.new([arg1, arg2, ...], [tx params])`
-此函数接受你的合约所需的全部构造函数参数，并在网络上部署一个新的合约实例。在最后还有一个可选的参数，你可以用它来传递交易参数，包括交易发起地址、gas限制和价格。此函数返回一个 Promise，解析为新部署地址处的合约抽象实例。
+此函数接受你的合约所需的全部构造函数参数，并在网络上部署一个新的合约实例。在最后还有一个可选的参数，你可以用它来传递交易参数，包括交易发起地址、gas限制和价格。此函数返回一个 Promise，解析为新部署地址处的合约类实例。
 
 #### `MyContract.at(address)`
-此函数在指定的地址创建一个表示合约的新抽象实例。返回一个“thenable”对象（出于向后兼容性考虑，尚不是实际的 Promise）。在确保代码存在于指定地址后，解析为合约抽象实例。
+此函数在指定的地址创建一个表示合约的新类实例。返回一个“thenable”对象（出于向后兼容性考虑，尚不是实际的 Promise）。在确保代码存在于指定地址后，解析为合约类实例。
 
 #### `MyContract.deployed()`
-创建一个表示合约在其部署地址处的抽象实例。部署地址是 truffle-contract 分配的特殊值，当设置后，会在内部保存该地址，以便从所使用的以太坊网络中推断出部署地址。这使你可以编写代码，引用特定部署的合约，而无需自行管理这些地址。与 at() 类似，deployed() 也是 thenable，并将解析为表示已部署合约的合约抽象实例，前提是代码存在于该位置并且该地址在所使用的网络上存在。
+创建一个表示合约在其部署地址处的类实例。部署地址是 truffle-contract 分配的特殊值，当设置后，会在内部保存该地址，以便从所使用的以太坊网络中推断出部署地址。这使你可以编写代码，引用特定部署的合约，而无需自行管理这些地址。与 at() 类似，deployed() 也是 thenable，并将解析为表示已部署合约的合约类实例，前提是代码存在于该位置并且该地址在所使用的网络上存在。
 
 #### `MyContract.link(instance)`
-将由合约抽象实例表示的库链接到 MyContract。该库必须首先部署并设置其部署地址。名称和部署地址将从合约抽象实例中推断出来。当使用此形式的 `MyContract.link()` 时，MyContract 将消耗所有链接库的事件，并能够报告这些事件发生在交易结果中。
+将由合约类实例表示的库链接到 MyContract。该库必须首先部署并设置其部署地址。名称和部署地址将从合约类实例中推断出来。当使用此形式的 `MyContract.link()` 时，MyContract 将消耗所有链接库的事件，并能够报告这些事件发生在交易结果中。
 
 可以多次链接库，将覆盖其先前的链接。
 
@@ -97,22 +101,22 @@ example
 将由对象表示的多个库链接到 MyContract。键必须是表示库名称的字符串，值必须是表示地址的字符串。与上述类似，不会使用此形式消耗库的事件。
 
 #### `MyContract.networks()`
-查看此合约抽象实例已设置的网络 ID 列表。
+查看此合约类实例已设置的网络 ID 列表。
 
 #### `MyContract.setProvider(provider)`
-设置此合约抽象实例将用于执行交易的 web3 提供程序。
+设置此合约类实例将用于执行交易的 web3 提供程序。
 
 #### `MyContract.hasNetwork(network_id)`
 设置 MyContract 当前表示的网络。
 
 #### `MyContract.hasNetwork(network_id)`
-返回一个布尔值，表示此合约抽象实例是否已设置为表示特定网络。
+返回一个布尔值，表示此合约类实例是否已设置为表示特定网络。
 
 
 以下是对你提供的英文文本的中文翻译：
 
 ### `MyContract.defaults([new_defaults])`
-获取并可选择为从此抽象创建的所有实例设置交易默认值。如果没有传递任何参数，它将简单地返回一个表示当前默认值的对象。如果传递了一个对象，它将设置新的默认值。可以设置的示例默认交易值包括：
+获取并可选择为从此类创建的所有实例设置交易默认值。如果没有传递任何参数，它将简单地返回一个表示当前默认值的对象。如果传递了一个对象，它将设置新的默认值。可以设置的示例默认交易值包括：
 ``` javascript
 MyContract.defaults({
   from: ...,
@@ -121,16 +125,16 @@ MyContract.defaults({
   value: ...
 })
 ```
-例如，设置默认的调用者地址在你有一个合约抽象用于表示一个用户（即一个地址）时非常有用。
+例如，设置默认的调用者地址在你有一个合约类用于表示一个用户（即一个地址）时非常有用。
 
 ### `MyContract.clone(network_id)`
-克隆一个合约抽象，以获取另一个管理相同合约构件的对象，但使用不同的 network_id。如果你想在不同的网络上管理相同的合约，这将非常有用。在使用此函数时，请不要忘记之后设置正确的提供程序。
+克隆一个合约类，以获取另一个管理相同合约构件的对象，但使用不同的 network_id。如果你想在不同的网络上管理相同的合约，这将非常有用。在使用此函数时，请不要忘记之后设置正确的提供程序。
 ``` javascript
 const MyOtherContract = MyContract.clone(1337);
 ```
 
 ### `MyContract.numberFormat = number_type`
-你可以设置此属性来选择抽象方法返回的数字格式。默认行为是返回 BN。
+你可以设置此属性来选择类方法返回的数字格式。默认行为是返回 BN。
 ``` javascript
 // 可选值为：["BigNumber", "BN", "String"]。
 const Example = artifacts.require('Example');
@@ -138,10 +142,10 @@ Example.numberFormat = 'BigNumber';
 ```
 
 ### `MyContract.timeout(block_timeout)`
-此方法允许你设置交易的区块超时时间。从此抽象创建的合约实例将具有指定的交易区块超时时间。这意味着如果交易不立即被挖掘，它将在指定的区块数内重试。
+此方法允许你设置交易的区块超时时间。从此类创建的合约实例将具有指定的交易区块超时时间。这意味着如果交易不立即被挖掘，它将在指定的区块数内重试。
 
 ### `MyContract.autoGas = <boolean>`
-如果设置为 true，从此抽象创建的实例将使用 web3.eth.estimateGas，然后应用gas乘数来确定要包含在交易中的gas量。默认值为 true。请参阅 gasMultiplier。
+如果设置为 true，从此类创建的实例将使用 web3.eth.estimateGas，然后应用gas乘数来确定要包含在交易中的gas量。默认值为 true。请参阅 gasMultiplier。
 
 ###  `MyContract.gasMultiplier(gas_multiplier)`
 在启用 `autoGas` 时用于确定要包含在交易中的gas量的值。gas量的计算是通过使用 `web3.eth.estimateGas` 并将其乘以gas乘数来完成的。默认值为 1.25。

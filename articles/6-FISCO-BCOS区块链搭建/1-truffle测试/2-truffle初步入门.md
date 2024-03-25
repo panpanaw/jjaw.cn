@@ -115,7 +115,7 @@ contract("contract Test test",(accounts)=>{
 ```
 
 
-如果测试中有一个异常代表厕所失败，下面这个例子会永远都是测试失败。
+如果测试中有一个异常代表测试失败，下面这个例子会永远都是测试失败。
 ``` js
 contract("contract Test test",(accounts)=>{
     it("hello function test",async ()=>{

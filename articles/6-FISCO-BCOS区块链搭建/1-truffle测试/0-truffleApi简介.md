@@ -1,7 +1,8 @@
 # truffleApi简介
 
-[用JavaScript写测试用例](./1-truffle用JavaScript写测试用例.md)
-[truffle初步入门](./2-truffle初步入门.md)
+更多资料
+- [truffle初步入门](./2-truffle初步入门.md)
+- [用JavaScript写测试用例](./1-truffle用JavaScript写测试用例.md)
 
 
 **Truffle** 为与智能合约进行交互提供了**合约类**。如果你想了解合约的方法列表，请直接跳转到 API 部分。

@@ -651,5 +651,32 @@ contract("contract Test test",(accounts)=>{
 - [用JavaScript写测试用例](./1-truffle用JavaScript写测试用例.md)
 
 
+## 常见问题解答
+
+### 报错 `hit an invalid opcode while deploying`
+```
+"Test" hit an invalid opcode while deploying. Try:
+   * Verifying that your constructor params satisfy all assert conditions.
+   * Verifying your constructor code doesn't access an array out of bounds.
+   * Adding reason strings to your assert statements.
+```
+``` solidity
+pragma solidity ^0.8.21;
+contract Test{
+    function hello() pure public returns(string memory){
+        return "hello";
+    }
+}
+```
+``` js
+const Test = artifacts.require("Test");
+module.exports = function (deployer){
+     deployer.deploy(Test);
+}
+```
+
+原因可能是`0.8.21`版本和truffle不兼容，更换编译器版本为`0.8.19`即可。
+
+
 
 

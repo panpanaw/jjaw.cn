@@ -1,6 +1,6 @@
 <!-- 首页板块 -->
 <script setup>
-import backgroundImage from "../imgs/home-background.jpg"
+import backgroundImage from "../imgs/home-background.webp"
 
 </script>
 <template>
@@ -18,7 +18,7 @@ import backgroundImage from "../imgs/home-background.jpg"
                         </div>
                     </div>
                     <div class="editing">
-                        <img class="editingtop" src="../imgs/home-edit.png" />
+                        <img class="editingtop" src="../imgs/home-edit.webp" />
                         <div class="editinging">
                             <p># 神奇小破站</p>
                             <p>## 分享有意思的东西</p>

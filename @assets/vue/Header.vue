@@ -86,7 +86,7 @@ if (props.isAutoHide) {
   <header id="page-header" :class="{ top: isTop }">
     <div class="show">
       <RouterLink class="left" to="/">
-        <img src="../imgs/logo.png">
+        <img src="../imgs/logo.svg">
         <h3>{{ siteData.title }}</h3>
       </RouterLink>
       <div class="rigth">

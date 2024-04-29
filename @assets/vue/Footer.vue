@@ -4,7 +4,7 @@
 <template>
     <div class="footer">
         <div>
-            <img src="../imgs/logo.png" style="height: 2rem;" />
+            <img src="../imgs/logo.svg" style="height: 2rem;" />
         </div>
         <div><RouterLink to="/">神奇小破站 jjaw.cn</RouterLink></div>
         <div><a href="/editor.html">文章编辑器</a></div>

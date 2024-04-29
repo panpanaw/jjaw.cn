@@ -20,8 +20,10 @@ const topHeight:Ref<number|undefined> = ref(0);
             <Comment class="mtop"></Comment>
         </div>
         <div class="rigth">
-            <Writers  class="mtop"></Writers>
-            <ClientOnly><Chapters class="chapters mtop"></Chapters></ClientOnly>
+            <ClientOnly>
+                <Writers  class="mtop"></Writers>
+                <Chapters class="chapters mtop"></Chapters>
+            </ClientOnly>
         </div>
     </div>
     <Footer></Footer>
@@ -43,14 +45,14 @@ const topHeight:Ref<number|undefined> = ref(0);
 }
 
 .rigth {
-    width: 250px;
+    width: 300px;
     margin-left: 1rem;
     margin-right: 1rem;
 }
 
 .page {
     /* 100% - 右边的宽度 - 自己的margin */
-    width: calc(100% - 250px - 3rem);
+    width: calc(100% - 300px - 3rem);
     max-width: 890px;
     margin-left: 1rem;
 }

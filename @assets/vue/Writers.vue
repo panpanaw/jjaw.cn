@@ -26,7 +26,7 @@ onMounted(async () => {
         user.isONGithub = true;
         user.githubName = githubUser.githubName;
         user.githubPage = githubUser.githubPage;
-        user.img = githubUser.img;
+        user.img = githubUser.img+"&s=64";
       }else{
         user.isONGithub = false;
       }

@@ -72,6 +72,7 @@ KTG4是基于bukkitAPI的我的世界服务器跨服同步插件，全称Knapsac
 ### KnapsackToGo4的演示
 使用KnapsackToGo4可以轻松的完成多服务器之间的数据同步。KnapsackToGo4比KnapsackToGo2更稳定，更轻量，解决了死锁的问题，拥有更多同步方式和更强大的扩展性。
 
+
 </div>
 </div>
 </Demo>

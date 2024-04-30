@@ -22,6 +22,19 @@ export async function getGitHubUserInfoByEmail(email:string) {
             console.warn(error);
         }
     }
+    if(!githubUser && email.endsWith("@users.noreply.github.com")){
+        let userInfo = email.substring(0,email.indexOf("@")).split("+",2);
+        let userID = userInfo[0];
+        let userName = userInfo[1];
+        githubUser = {
+            img: `https://avatars.githubusercontent.com/u/${userID}?v=4`,
+            githubName: userName,
+            githubPage: `https://github.com/${userName}`
+        }
+
+        // 不用存了，因为不用去github搜索，直接重新解析就行
+        // localStorage.setItem(locKey,JSON.stringify(githubUser));
+    }
     if(!githubUser){
         const url = new URL("https://api.github.com/search/users");
         url.searchParams.append("per_page","1");

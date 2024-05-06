@@ -2,8 +2,8 @@
 # 页面路径
 permalinkPattern: 2024/3/6/ubuntu-mysql/
 
-title: linux ubuntu 安装并配置mysql80创建用户,远程连接,绑定ip和端口，远程访问
-description: linux ubuntu 安装并配置mysql80创建用户,远程连接,绑定ip和端口，远程访问
+title: Ubuntu Linux下MySQL 8.0的安装与远程用户配置教程
+description: 本教程将指导您在Ubuntu Linux系统中安装MySQL 8.0，并展示如何创建新用户、设置远程连接、绑定IP地址与端口，以实现安全的远程访问。
 tags: ["后端"]
 star: true
 

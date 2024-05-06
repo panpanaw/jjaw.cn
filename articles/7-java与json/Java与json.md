@@ -2,8 +2,8 @@
 # 页面路径
 permalinkPattern: 2024/3/5/java-json/
 
-title: java解析json的三个库的基础用法,Gson,FastJson,Jackson,一次把常用的库都看完。任何时刻都不慌。
-description: 本文讲述了Gson,FastJson,Jackson的区别，和具体的最基本的使用方法。
+title: Java JSON解析全攻略：Gson、FastJson与Jackson实用入门
+description: 探索Java中流行的JSON解析库：Gson、FastJson和Jackson。本文深入比较这三个库的特点，并提供了它们基础使用方法的详细指南，让您随时应对各种JSON处理需求。
 tags: ["后端"]
 star: true
 

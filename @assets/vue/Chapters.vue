@@ -16,6 +16,8 @@
   border: 0.1rem solid var(--border-color);
   overflow-y: auto;
   border-radius: 0.5rem;
+  scrollbar-width: thin;
+  /* scrollbar-color: var(--color-time1) #ffffff00; */
 }
 
 .nav-title {

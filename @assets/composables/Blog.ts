@@ -1,5 +1,5 @@
 //文章分类集合
-import { useBlogType,useBlogCategory } from "vuepress-plugin-blog2/client";
+import { useBlogType,useBlogCategory } from "@vuepress/plugin-blog/client";
 import { computed } from "vue"
 import { GitContributor } from "@vuepress/plugin-git";
 

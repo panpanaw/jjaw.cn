@@ -1,4 +1,5 @@
 import { Page, defineUserConfig } from 'vuepress'
+import { viteBundler } from '@vuepress/bundler-vite'
 import { autoLayoutsPlugin } from './@plugin/auto-layouts';
 import { homePagePlugin } from './@plugin/home-page';
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
@@ -8,9 +9,9 @@ import { GitContributor, GitData, gitPlugin } from '@vuepress/plugin-git'
 import { tocPlugin } from '@vuepress/plugin-toc'
 import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links'
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
-import { sitemapPlugin } from "vuepress-plugin-sitemap2";
-import { seoPlugin } from "vuepress-plugin-seo2";
-import { blogPlugin } from "vuepress-plugin-blog2";
+import { sitemapPlugin } from "@vuepress/plugin-sitemap";
+import { seoPlugin } from "@vuepress/plugin-seo";
+import { blogPlugin } from "@vuepress/plugin-blog";
 import { giscusCommentPlugin } from './@plugin/giscus-comment';
 import { externalLinkIconPlugin } from '@vuepress/plugin-external-link-icon'
 import { prefersColorSchemePlugin } from './@plugin/prefers-color-scheme';
@@ -239,7 +240,11 @@ export default defineUserConfig({
                 }
             }
         }),
-    ]
+    ],
+    bundler: viteBundler({
+        viteOptions: {},
+        vuePluginOptions: {},
+    }),
 });
 
 

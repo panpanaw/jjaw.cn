@@ -90,6 +90,25 @@ const createdTime = useCreatedTime();
   box-sizing: border-box;
 }
 
+h1 .header-anchor, h2 .header-anchor, h3 .header-anchor, h4 .header-anchor, h5 .header-anchor, h6 .header-anchor {
+    color: inherit;
+    text-decoration: none !important;
+    position: relative;
+}
+
+h1 .header-anchor:hover:before, 
+h2 .header-anchor:hover:before, 
+h3 .header-anchor:hover:before, 
+h4 .header-anchor:hover:before, 
+h5 .header-anchor:hover:before, 
+h6 .header-anchor:hover:before {
+    font-size: .8em;
+    content: "¶";
+    position: absolute;
+    left: -.75em;
+    color: var(--color-time1);
+}
+
 /* .markdown-body a.header-anchor {
   display: inline-block;
   width: 0;

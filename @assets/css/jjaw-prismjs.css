@@ -4,7 +4,7 @@ html .markdown-body {
     --color-pre: black;
     --color-pre-background: white;
     --color-code-background: #b3d4fc;
-    --color-pre-language-background: #f5f2f0;
+    --color-pre-language-background: #f6f8fa;
     --color-token-cdata: slategray;
     --color-token-punctuation: #999;
     --color-token-deleted: #905;
@@ -19,7 +19,7 @@ html.dark .markdown-body {
     --color-pre: rgb(255, 255, 255);
     --color-pre-background: rgb(0, 0, 0);
     --color-code-background: #3c5068;
-    --color-pre-language-background: #1f1f1f;
+    --color-pre-language-background: #161b22;
     --color-token-cdata: rgb(18, 92, 166);
     --color-token-punctuation: #b2b2b2;
     --color-token-deleted: rgb(197, 104, 155);

@@ -74,36 +74,36 @@ export default defineUserConfig({
         }),
         /**
          * 自动注册全局组件
-         * https://v2.vuepress.vuejs.org/zh/reference/plugin/register-components.html
+         * https://ecosystem.vuejs.press/zh/plugins/register-components.html
          */
         registerComponentsPlugin({
             componentsDir: `${__dirname}/@tags`
         }),
         /**
          * 切换页面显示进度条
-         * https://v2.vuepress.vuejs.org/zh/reference/plugin/nprogress.html
+         * https://ecosystem.vuejs.press/zh/plugins/nprogress.html
          */
         nprogressPlugin(),
         /**
          * 代码语法高亮
-         * https://v2.vuepress.vuejs.org/zh/reference/plugin/prismjs.html
+         * https://ecosystem.vuejs.press/zh/plugins/prismjs.html
          */
         prismjsPlugin({
             preloadLanguages: []
         }),
         /**
          * 获取git信息
-         * https://v2.vuepress.vuejs.org/zh/reference/plugin/git.html
+         * https://ecosystem.vuejs.press/zh/plugins/git.html
          */
         gitPlugin(),
         /**
          * 自动生成目录
-         * https://v2.vuepress.vuejs.org/zh/reference/plugin/toc.html
+         * https://ecosystem.vuejs.press/zh/plugins/toc.html
          */
         tocPlugin(),
         /**
          * 页面滚动自动定位hash
-         * https://v2.vuepress.vuejs.org/zh/reference/plugin/active-header-links.html
+         * https://ecosystem.vuejs.press/zh/plugins/active-header-links.html
          */
         activeHeaderLinksPlugin({
             headerLinkSelector: ".vuepress-toc-link",
@@ -133,7 +133,7 @@ export default defineUserConfig({
         }),
         /**
          * sitemap生成
-         * https://plugin-sitemap2.vuejs.press/zh/
+         * https://ecosystem.vuejs.press/zh/plugins/sitemap/
          */
         sitemapPlugin({
             hostname: hostName,
@@ -141,7 +141,7 @@ export default defineUserConfig({
         }),
         /**
          * eco 搜索引擎优化
-         * https://plugin-seo2.vuejs.press/zh/
+         * https://ecosystem.vuejs.press/zh/plugins/seo/
          */
         seoPlugin({
             hostname: hostName,
@@ -151,7 +151,7 @@ export default defineUserConfig({
         }),
         /**
          * 博客插件 列表 分类 标签
-         * https://plugin-blog2.vuejs.press/
+         * https://ecosystem.vuejs.press/zh/plugins/blog/
          */
         blogPlugin({
             getInfo(page) {
@@ -230,7 +230,7 @@ export default defineUserConfig({
             loading: "eager"
         }),
         /**
-         * https://v2.vuepress.vuejs.org/zh/reference/plugin/external-link-icon.html
+         * https://ecosystem.vuejs.press/zh/plugins/external-link-icon.html
          * 该插件会为你 Markdown 内容中的外部链接添加一个图标
          */
         externalLinkIconPlugin({

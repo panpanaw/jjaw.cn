@@ -1,0 +1,16 @@
+/* 
+该插件会为你 Markdown 内容中的外部链接添加一个图标
+https://ecosystem.vuejs.press/zh/plugins/external-link-icon.html
+*/
+:root {
+    --external-link-icon-color: #aaa;
+}
+
+/* 
+将 nprogress 集成到 VuePress 中，在切换到另一个页面时会展示进度条。
+https://ecosystem.vuejs.press/zh/plugins/nprogress.html
+*/
+:root {
+    --nprogress-color: #29d;
+    --nprogress-z-index: 1031;
+}

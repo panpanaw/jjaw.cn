@@ -1,6 +1,6 @@
 import { defineUserConfig } from 'vuepress'
 import { viteBundler } from '@vuepress/bundler-vite'
-import { jjawBlogTheme } from './jjaw-blog-theme'
+import { jjawBlogTheme } from './jjaw-blog-theme/index.ts'
 
 const hostName = 'jjaw.cn';
 export default defineUserConfig({

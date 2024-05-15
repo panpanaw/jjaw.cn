@@ -1,5 +1,6 @@
-import { getDirname, path } from 'vuepress/utils'
+import { fs, getDirname, path } from 'vuepress/utils'
 import type { Theme } from 'vuepress/core'
+import anchor from 'markdown-it-anchor'
 
 // 自己写的 giscus
 import { giscusCommentPlugin, type GiscusConfig } from '../giscus-comment'
@@ -33,9 +34,9 @@ import { seoPlugin, type SeoPluginOptions } from '@vuepress/plugin-seo'
 // sitemap
 import { sitemapPlugin, type SitemapPluginOptions } from '@vuepress/plugin-sitemap'
 
-// https://ecosystem.vuejs.press/zh/plugins/prismjs.html
-// 该插件使用 Prism.js 来为 Markdown 代码块启用代码高亮。
-import { prismjsPlugin } from '@vuepress/plugin-prismjs'
+// https://ecosystem.vuejs.press/zh/plugins/shiki.html
+// 该插件使用 Shiki 来为 Markdown 代码块启用代码高亮。
+import { shikiPlugin } from '@vuepress/plugin-shiki'
 
 // https://ecosystem.vuejs.press/zh/plugins/active-header-links.html
 // 该插件会监听页面滚动事件。当页面滚动至某个 标题锚点 后，如果存在对应的 标题链接 ，那么该插件会将路由 Hash 更改为该 标题锚点 。
@@ -77,13 +78,31 @@ export const jjawBlogTheme = ({seo,sitemap,giscus,externalLinkIcon,githubEdit}:{
                 blogPlugin({}),
                 seoPlugin(seo),
                 sitemapPlugin(sitemap),
-                prismjsPlugin({}),
+                shikiPlugin({
+                    themes:{
+                        light:JSON.parse(fs.readFileSync(`${__dirname}/themes/min-light.json`, 'utf8')),
+                        dark:JSON.parse(fs.readFileSync(`${__dirname}/themes/min-dark.json`, 'utf8')),
+                    }
+                }),
                 activeHeaderLinksPlugin({}),
                 gitPlugin({}),
                 giscusCommentPlugin(giscus),
                 tocPlugin(),
                 githubEditPlugin(githubEdit)
             ],
+            extendsMarkdownOptions:(markdownOptions, app)=>{
+                markdownOptions.anchor = {...{
+                    permalink:anchor.permalink.ariaHidden({
+                        placement: 'after',
+                        symbol:'',
+                        class: 'header-anchor'
+                    }),
+                },...markdownOptions.anchor};
+                markdownOptions.code = {...{
+                    lineNumbers:false
+                },...markdownOptions.code};
+            }
+            
         }
     }
     return theme;

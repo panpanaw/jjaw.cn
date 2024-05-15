@@ -14,7 +14,7 @@ comment: true
 最近搞了个mc服务器检测的项目，于是就在网上查找mc ping的协议。之后就找到了个例子：https://gist.github.com/zh32/7190955
 
 这个例子是真的好用。我把它简单修改了下，一行代码就可以ping服务器。  其实只是把返回void变成了this
-~~~ Java
+~~~ java
 ServerListPing.StatusResponse pingSata = new ServerListPing().setTimeout(1000).setAddress(new InetSocketAddress(server.address, server.port)).fetchData()
 ~~~
 

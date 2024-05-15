@@ -50,7 +50,7 @@ export default defineUserConfig({
             "https://github.com/jianjianai/vue.js.jjaw.cn.articles",
             "master",
             "/edit-on-github/"
-            ),
+        ),
         /**
         * 颜色模式切换插件，某些插件用到了vuepress自带主题的颜色模式，这个插件从默认主题修改而来。在html标签添加对应颜色class
         * 自己瞎写的 ./@plugin/prefers-color-scheme

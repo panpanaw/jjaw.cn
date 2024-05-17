@@ -14,3 +14,34 @@ https://ecosystem.vuejs.press/zh/plugins/nprogress.html
     --nprogress-color: #29d;
     --nprogress-z-index: 1031;
 }
+
+
+/**
+global-component-library 组件插件
+*/
+:root{
+    --demo-window-top-bar:var(--theme-c-bg-tab-nav);;
+    --demo-window--border:var(--theme-c-brc);
+    --demo-window-top-bar-text:var(--theme-c-bg-tab-nav-text);
+}
+
+/**
+https://plugin-md-enhance.vuejs.press/zh/
+为 VuePress2 提供更多 Markdown 增强功能
+*/
+/* 选项卡 */
+:root{
+    --tab-bg-color: var(--theme-c-bg);
+    --tab-nav-text-color: var(--theme-c-bg-tab-nav-text);
+    --tab-nav-bg-color: var(--theme-c-bg-tab-nav);
+    --tab-nav-hover-color: var(--theme-c-bg);
+    --vp-brc:var(--theme-c-bg-tab-nav);
+}
+div.vp-tabs{
+    border: 1px solid var(--theme-c-brc);
+}
+
+/* 任务列表 */
+:root{
+    /* --vp-tc: var(#3eaf7c); */
+}

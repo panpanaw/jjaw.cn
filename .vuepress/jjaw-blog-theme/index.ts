@@ -50,6 +50,16 @@ import { gitPlugin } from '@vuepress/plugin-git'
 // 该插件会提供一个目录 (table-of-contents, TOC) 组件。
 import { tocPlugin } from '@vuepress/plugin-toc'
 
+// https://plugin-md-enhance.vuejs.press/zh
+// 为 VuePress2 提供更多 Markdown 增强功能
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+
+// 自己写的组件库插件
+import { globalComponentLibraryPlugin } from '../global-component-library';
+
+//主题颜色切换插件
+import { prefersColorSchemePlugin } from '../prefers-color-scheme';
+
 const __dirname = getDirname(import.meta.url)
 export const jjawBlogTheme = ({seo,sitemap,giscus,externalLinkIcon,githubEdit}:{
     seo:SeoPluginOptions,
@@ -84,16 +94,30 @@ export const jjawBlogTheme = ({seo,sitemap,giscus,externalLinkIcon,githubEdit}:{
                         dark:JSON.parse(fs.readFileSync(`${__dirname}/themes/min-dark.json`, 'utf8')),
                     }
                 }),
-                activeHeaderLinksPlugin({}),
+                activeHeaderLinksPlugin({
+                    headerAnchorSelector:".header-anchor",
+                    headerLinkSelector:"a"
+                }),
                 gitPlugin({}),
                 giscusCommentPlugin(giscus),
                 tocPlugin(),
-                githubEditPlugin(githubEdit)
+                githubEditPlugin(githubEdit),
+                mdEnhancePlugin({
+                    tasklist:true, //任务列表
+                    tabs: true,//选项卡
+                    codetabs: true,//代码选项卡
+                    hint: true,//提示容器
+                    imgLazyload: true,//原生图片懒加载
+                    alert: true,//GFM 警告
+
+                }),
+                globalComponentLibraryPlugin(),
+                prefersColorSchemePlugin(),
             ],
             extendsMarkdownOptions:(markdownOptions, app)=>{
                 markdownOptions.anchor = {...{
                     permalink:anchor.permalink.ariaHidden({
-                        placement: 'after',
+                        placement: 'before',
                         symbol:'',
                         class: 'header-anchor'
                     }),
@@ -102,7 +126,6 @@ export const jjawBlogTheme = ({seo,sitemap,giscus,externalLinkIcon,githubEdit}:{
                     lineNumbers:false
                 },...markdownOptions.code};
             }
-            
         }
     }
     return theme;

@@ -1,0 +1,25 @@
+
+/*
+纯色
+*/
+:root{
+    --theme-c-white:#ffffff;
+    --theme-c-black:#000000;
+}
+
+/*
+功能色
+*/
+:root{
+    --theme-c-bg: var(--theme-c-white);
+    --theme-c-bg-tab-nav: #f6f6f7;
+    --theme-c-bg-tab-nav-text: var(--theme-c-black);
+    --theme-c-brc: #d8d8d8;
+}
+
+.dark{
+    --theme-c-bg: #1b1b1f;
+    --theme-c-bg-tab-nav:#333943;
+    --theme-c-bg-tab-nav-text: var(--theme-c-white);
+    --theme-c-brc: #393939;
+}

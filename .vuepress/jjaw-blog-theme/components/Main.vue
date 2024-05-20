@@ -1,28 +1,42 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
-
-
-onMounted(()=>{
-    console.log("setUP");
-})
 
 </script>
 <template>
-    <header v-if="$slots.header">
-        <slot name="header"></slot>
-    </header>
-    <aside v-if="$slots.aside">
-        <slot name="aside"></slot>
-    </aside>
-    <main v-if="$slots.default">
-        <slot name="default"></slot>
-    </main>
-    <nav v-if="$slots.nav">
-        <slot name="nav"></slot>
-    </nav>
-    <footer v-if="$slots.footer">
-        <slot name="footer"></slot>
-    </footer>
+    <div class="app-main">
+        <div class="layout">
+            <header v-if="$slots.header" class="header">
+                <slot name="header"></slot>
+            </header>
+            <slot name="default"></slot>
+            <footer v-if="$slots.footer" class="footer">
+                <slot name="footer"></slot>
+            </footer>
+        </div>
+    </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.app-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.layout {
+    /* max-width: var(--mian-max-width); */
+    width: min(100%,var(--mian-max-width));
+}
+.main{
+    flex: 1;
+    min-width: 0;
+    /* overflow: hidden; */
+}
+
+.header {
+    height: var(--header-height);
+    position: sticky;
+    top: 0px;
+    background-color: var(--theme-c-bg);
+    z-index: 99;
+    margin-bottom: 1rem;
+}
+</style>

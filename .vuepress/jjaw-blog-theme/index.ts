@@ -34,9 +34,9 @@ import { seoPlugin, type SeoPluginOptions } from '@vuepress/plugin-seo'
 // sitemap
 import { sitemapPlugin, type SitemapPluginOptions } from '@vuepress/plugin-sitemap'
 
-// https://ecosystem.vuejs.press/zh/plugins/shiki.html
-// 该插件使用 Shiki 来为 Markdown 代码块启用代码高亮。
-import { shikiPlugin } from '@vuepress/plugin-shiki'
+// https://ecosystem.vuejs.press/zh/plugins/prismjs.html
+// 代码高亮。
+import { prismjsPlugin } from '@vuepress/plugin-prismjs'
 
 // https://ecosystem.vuejs.press/zh/plugins/active-header-links.html
 // 该插件会监听页面滚动事件。当页面滚动至某个 标题锚点 后，如果存在对应的 标题链接 ，那么该插件会将路由 Hash 更改为该 标题锚点 。
@@ -88,12 +88,7 @@ export const jjawBlogTheme = ({seo,sitemap,giscus,externalLinkIcon,githubEdit}:{
                 blogPlugin({}),
                 seoPlugin(seo),
                 sitemapPlugin(sitemap),
-                shikiPlugin({
-                    themes:{
-                        light:JSON.parse(fs.readFileSync(`${__dirname}/themes/min-light.json`, 'utf8')),
-                        dark:JSON.parse(fs.readFileSync(`${__dirname}/themes/min-dark.json`, 'utf8')),
-                    }
-                }),
+                prismjsPlugin({}),
                 activeHeaderLinksPlugin({
                     headerAnchorSelector:".header-anchor",
                     headerLinkSelector:"a"
@@ -115,13 +110,6 @@ export const jjawBlogTheme = ({seo,sitemap,giscus,externalLinkIcon,githubEdit}:{
                 prefersColorSchemePlugin(),
             ],
             extendsMarkdownOptions:(markdownOptions, app)=>{
-                markdownOptions.anchor = {...{
-                    permalink:anchor.permalink.ariaHidden({
-                        placement: 'before',
-                        symbol:'',
-                        class: 'header-anchor'
-                    }),
-                },...markdownOptions.anchor};
                 markdownOptions.code = {...{
                     lineNumbers:false
                 },...markdownOptions.code};

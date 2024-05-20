@@ -1,4 +1,5 @@
-<script setup>
+<!-- 页面尾 -->
+<script setup lang="ts">
 
 </script>
 <template>

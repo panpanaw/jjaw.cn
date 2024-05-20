@@ -289,11 +289,11 @@ serverName: {{serverName}}
 调整配置:
 <table style="width: 100%;">
     <tr style="display: flex;">
-        <td style="width: 6rem;">服务器名称：</td>
+        <td >服务器名称：</td>
         <td style="flex: 1;"><input type="text" v-model="serverName" style="width: 100%;"></td>
     </tr>
     <tr style="display: flex;">
-        <td  style="width: 6rem;">文件夹位置：</td>
+        <td  >文件夹位置：</td>
         <td style="flex: 1;"><input type="text" v-model="fileFile" style="width: 100%;"></td>
     </tr>
 </table>
@@ -312,19 +312,19 @@ userName: {{userName}}
 调整配置:
 <table style="width: 100%;">
     <tr style="display: flex;">
-        <td style="width: 6rem;">服务器名称：</td>
+        <td >服务器名称：</td>
         <td style="flex: 1;"><input type="text" v-model="serverName" style="width: 100%;"></td>
     </tr>
     <tr style="display: flex;">
-        <td  style="width: 6rem;">文件位置：</td>
+        <td  >文件位置：</td>
         <td style="flex: 1;"><input type="text" v-model="sqliteFile" style="width: 100%;"></td>
     </tr>
     <tr style="display: flex;">
-        <td  style="width: 6rem;">用户名：</td>
+        <td  >用户名：</td>
         <td style="flex: 1;"><input type="text" v-model="userName" style="width: 100%;"></td>
     </tr>
     <tr style="display: flex;">
-        <td  style="width: 6rem;">密码：</td>
+        <td  >密码：</td>
         <td style="flex: 1;"><input type="text" v-model="passWord" style="width: 100%;"></td>
     </tr>
 </table>
@@ -342,23 +342,23 @@ userName: {{userName}}
 调整配置:
 <table style="width: 100%;">
     <tr style="display: flex;">
-        <td style="width: 6rem;">服务器名称：</td>
+        <td >服务器名称：</td>
         <td style="flex: 1;"><input type="text" v-model="serverName" style="width: 100%;"></td>
     </tr>
     <tr style="display: flex;">
-        <td  style="width: 6rem;">数据库地址：</td>
+        <td  >数据库地址：</td>
         <td style="flex: 1;"><input type="text" v-model="mysqlAdderss" style="width: 100%;"></td>
     </tr>
     <tr style="display: flex;">
-        <td  style="width: 6rem;">数据库名称：</td>
+        <td  >数据库名称：</td>
         <td style="flex: 1;"><input type="text" v-model="mysqlDataBase" style="width: 100%;"></td>
     </tr>
     <tr style="display: flex;">
-        <td  style="width: 6rem;">用户名：</td>
+        <td  >用户名：</td>
         <td style="flex: 1;"><input type="text" v-model="userName" style="width: 100%;"></td>
     </tr>
     <tr style="display: flex;">
-        <td  style="width: 6rem;">密码：</td>
+        <td  >密码：</td>
         <td style="flex: 1;"><input type="text" v-model="passWord" style="width: 100%;"></td>
     </tr>
 </table>

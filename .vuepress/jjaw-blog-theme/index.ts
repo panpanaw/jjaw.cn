@@ -108,6 +108,7 @@ export const jjawBlogTheme = ({seo,sitemap,giscus,externalLinkIcon,githubEdit}:{
                 }),
                 globalComponentLibraryPlugin(),
                 prefersColorSchemePlugin(),
+                
             ],
             extendsMarkdownOptions:(markdownOptions, app)=>{
                 markdownOptions.code = {...{

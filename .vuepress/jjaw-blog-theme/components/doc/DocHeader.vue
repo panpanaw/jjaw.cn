@@ -14,6 +14,7 @@ const frontmatter = usePageFrontmatter();
 </template>
 <style scoped>
 .doc-h-h1{
+    font-weight: bolder;
     font-size: 2rem;
     margin: 2rem 0;
     line-height: 2.5rem;

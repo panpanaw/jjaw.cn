@@ -1,18 +1,11 @@
 <!-- 目录 -->
 <script setup lang="ts">
-import ContentBox from '../box/ContentBox.vue';
 import StickyContentBox from '../box/StickyContentBox.vue';
+import Contributors from './Contributors.vue'
 </script>
 <template>
     <div class="aside">
-        <ContentBox class="aside-befr">
-            <template #header>
-                test
-            </template>
-            <template #default>
-                test
-            </template>
-        </ContentBox>
+        <Contributors class="aside-befr" />
         <StickyContentBox>
             <template #header>
                 test

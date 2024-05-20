@@ -13,11 +13,13 @@
 */
 :root{
     --theme-text-1: var(--theme-c-black); /*文字颜色*/
+    --theme-text-2: #000000cc;
     --theme-c-bg: var(--theme-c-white); /*背景颜色*/
     --theme-c-brc: rgb(232 230 240); /**边框颜色*/
 }
 .dark{
     --theme-text-1: var(--theme-c-white);
+    --theme-text-2: #ffffffcc;
     --theme-c-bg: var(--theme-c-black);
     --theme-c-brc: rgb(51 49 60);
 }
@@ -31,6 +33,17 @@
 .dark{
     --theme-c-bg-tab-nav:#0a0f15;
     --theme-c-bg-tab-nav-text: var(--theme-text-1);
+}
+
+/**
+ 贡献者列表 ./aside/Contributors.vue
+*/
+:root{
+    --contributor-text-name-c:var(--theme-text-1); /* 名称颜色 */
+    --contributor-text-email-c:var(--theme-text-2); /* 邮箱颜色 */
+    --contributor-text-commits-c:var(--theme-text-2); /* 提交数量颜色 */
+    --contributor-img-border-c: var(--theme-c-brc); /* 头像框边框颜色 */
+    --contributor-img-bg-c: var(--theme-c-bg-tab-nav); /* 头像框默认背景色 */
 }
 
 /**

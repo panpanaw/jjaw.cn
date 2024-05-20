@@ -50,7 +50,7 @@
 布局 ./Main.vue  ./nav/NavMain.vue
 */
 :root{
-    --header-height:4rem;
+    --header-height:3.5rem;
 }
 
 /**

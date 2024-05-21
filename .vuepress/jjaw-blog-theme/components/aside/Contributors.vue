@@ -12,7 +12,7 @@ function githubAvatarUrlAddSize(url:URL):string{
 <template>
     <ContentBox class="aside-befr">
         <template #header>
-            <span style="font-weight: bolder;">贡献者</span>
+            <span style="font-weight: bolder;">文章贡献者</span>
         </template>
         <template #default>
             <div class="contributors">

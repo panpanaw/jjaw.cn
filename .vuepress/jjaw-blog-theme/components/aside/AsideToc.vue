@@ -37,6 +37,9 @@ import StickyContentBox from '../box/StickyContentBox.vue';
     display: block;
     margin-bottom: 0.3rem;
 }
+.aside-toc a:hover{
+    color: var(--aside-toc-active-c);
+}
 .aside-toc .active{
     color: var(--aside-toc-active-c);
 }

@@ -80,6 +80,8 @@
 */
 :root{
     --aside-toc-line-c : var(--theme-c-brc); /*页面导航，分割线颜色*/
+    --aside-toc-hover-c : var(--aside-toc-active-c);
+    
     --aside-toc-active-c : #0969da; /* 导航被选择颜色 */
 }
 .dark{

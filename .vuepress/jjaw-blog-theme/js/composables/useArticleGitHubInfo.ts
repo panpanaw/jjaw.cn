@@ -40,17 +40,13 @@ export type ArticleGitHubInfo = {
     createdTime:number,
     updatedTime:number
 }
-let articleGitHubInfo:ArticleGitHubInfo|undefined = undefined;
 /**
  * 获取文章的信息,先获取git信息，页面加载完之后从github获取
  */
 export function useArticleGitHubInfo():ArticleGitHubInfo{
-    if(articleGitHubInfo){
-        return articleGitHubInfo;
-    }
     const page = usePageData<GitPluginPageData>()
     const { git } = page.value;
-    articleGitHubInfo = reactive<ArticleGitHubInfo>({
+    let articleGitHubInfo = reactive<ArticleGitHubInfo>({
         gitHubContributors:gethubGithubUserInfo(git.contributors || []),
         createdTime:git.createdTime || 0,
         updatedTime:git.updatedTime || 0

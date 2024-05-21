@@ -24,6 +24,7 @@
 .layout {
     /* max-width: var(--mian-max-width); */
     width: min(100%,var(--mian-max-width));
+    padding: 0 1rem;
 }
 .main{
     flex: 1;

@@ -16,6 +16,8 @@
 <style scoped>
 .box-main{
     background-color: var(--content-box-mian-bgc);
+    overflow-y: auto;
+    scrollbar-width: thin;
 }
 .box-main-padding{
     margin: var(--content-box-mian-padding);
@@ -28,6 +30,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    flex: none;
 }
 .content-box{
     border: var(--content-box-border);

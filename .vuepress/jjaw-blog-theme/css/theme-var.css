@@ -47,7 +47,7 @@
 }
 
 /**
-布局 ./Main.vue  ./nav/NavMain.vue
+布局 ./Main.vue  ./nav/NavMain.vue ./aside/AsideToc.vue
 */
 :root{
     --header-height:3.5rem;
@@ -73,4 +73,15 @@
     --content-box-mian-padding: 1rem 1rem;
     --content-box-radius: 0.5rem;
     --content-box-mian-bgc: var(--theme-c-bg);
+}
+
+/*
+组件 ./aside/AsideToc.vue
+*/
+:root{
+    --aside-toc-line-c : var(--theme-c-brc); /*页面导航，分割线颜色*/
+    --aside-toc-active-c : #0969da; /* 导航被选择颜色 */
+}
+.dark{
+    --aside-toc-active-c : var(--theme-c-logo);
 }

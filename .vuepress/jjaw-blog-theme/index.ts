@@ -91,7 +91,7 @@ export const jjawBlogTheme = ({seo,sitemap,giscus,externalLinkIcon,githubEdit}:{
                 prismjsPlugin({}),
                 activeHeaderLinksPlugin({
                     headerAnchorSelector:".header-anchor",
-                    headerLinkSelector:"a"
+                    headerLinkSelector:".vuepress-toc-link"
                 }),
                 gitPlugin({}),
                 giscusCommentPlugin(giscus),

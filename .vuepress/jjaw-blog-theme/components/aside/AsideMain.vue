@@ -1,19 +1,14 @@
 <!-- 目录 -->
 <script setup lang="ts">
-import StickyContentBox from '../box/StickyContentBox.vue';
 import Contributors from './Contributors.vue'
+import AsideToc from "./AsideToc.vue"
+
+
 </script>
 <template>
     <div class="aside">
         <Contributors class="aside-befr" />
-        <StickyContentBox>
-            <template #header>
-                test
-            </template>
-            <template #default>
-                test
-            </template>
-        </StickyContentBox>
+        <AsideToc />
     </div>
 </template>
 <style scoped>

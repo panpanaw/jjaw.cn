@@ -4,8 +4,11 @@ import Header from '../components/Header.vue'
 import DocMain from '../components/doc/DocMain.vue';
 import NavMain from '../components/nav/NavMain.vue';
 import Aside from '../components/aside/AsideMain.vue';
-import Body from '../components/Body.vue'
+import Body from '../components/ArticleBody.vue'
 import Footer from '../components/Footer.vue';
+
+
+
 </script>
 <template>
     <Main>

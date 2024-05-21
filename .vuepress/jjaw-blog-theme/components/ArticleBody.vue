@@ -16,15 +16,32 @@
 </template>
 
 <style scoped>
+
+@media (max-width: 1240px){
+    .body:has(.nav) .aside{
+        display: none;
+    }
+}
+@media (max-width: 960px){
+    .nav{
+        display: none;
+    }
+    .aside{
+        display: none;
+    }
+}
+
 .main {
     flex: 1;
     min-width: 0;
     /* overflow: hidden; */
+    max-width: 960px;
 }
 
 .body {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .nav {

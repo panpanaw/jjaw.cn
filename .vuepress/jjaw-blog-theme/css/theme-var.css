@@ -47,7 +47,7 @@
 }
 
 /**
-布局 ./Main.vue  ./nav/NavMain.vue ./aside/AsideToc.vue
+布局 ./Main.vue  ./nav/NavMain.vue ./aside/AsideToc.vue  ./aside/navNavList.vue
 */
 :root{
     --header-height:3.5rem;
@@ -86,4 +86,17 @@
 }
 .dark{
     --aside-toc-active-c : var(--theme-c-logo);
+}
+
+/*
+组件 ./aside/navNavList.vue
+*/
+:root{
+    --nav-toc-line-c : var(--theme-c-brc); /*页面导航，分割线颜色*/
+    --nav-toc-hover-c : var(--nav-toc-active-c);
+    
+    --nav-toc-active-c : #0969da; /* 导航被选择颜色 */
+}
+.dark{
+    --nav-toc-active-c : var(--theme-c-logo);
 }

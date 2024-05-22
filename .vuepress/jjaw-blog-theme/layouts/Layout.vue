@@ -6,9 +6,8 @@ import NavMain from '../components/nav/NavMain.vue';
 import Aside from '../components/aside/AsideMain.vue';
 import Body from '../components/ArticleBody.vue'
 import Footer from '../components/Footer.vue';
-
-
-
+import { useNavPageData } from '../../nav-data-page/useNavPageUrl';
+const navPageData = useNavPageData();
 </script>
 <template>
     <Main>
@@ -16,11 +15,12 @@ import Footer from '../components/Footer.vue';
             <Header></Header>
         </template>
         <template #default>
+
             <Body>
                 <template #default>
                     <DocMain></DocMain>
                 </template>
-                <template #nav>
+                <template v-if="navPageData" #nav>
                     <NavMain></NavMain>
                 </template>
                 <template #aside>

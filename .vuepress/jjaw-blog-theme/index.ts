@@ -56,8 +56,11 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 // 自己写的组件库插件
 import { globalComponentLibraryPlugin } from '../global-component-library';
 
-//主题颜色切换插件
+// 主题颜色切换插件
 import { prefersColorSchemePlugin } from '../prefers-color-scheme';
+
+// nav自动处理导航栏
+import { navAataPagePlugin } from '../nav-data-page';
 
 const __dirname = getDirname(import.meta.url)
 export const jjawBlogTheme = ({seo,sitemap,giscus,externalLinkIcon,githubEdit}:{
@@ -109,7 +112,7 @@ export const jjawBlogTheme = ({seo,sitemap,giscus,externalLinkIcon,githubEdit}:{
                 }),
                 globalComponentLibraryPlugin(),
                 prefersColorSchemePlugin(),
-                
+                navAataPagePlugin(),
             ],
             extendsMarkdownOptions:(markdownOptions, app)=>{
                 markdownOptions.code = {...{

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "测试列表",
+    "link": "#",
+    "items": [
+      {
+        "title": "例子",
+        "link": "/example/"
+      },
+      {
+        "title": "例子页面",
+        "link": "/test/0/"
+      },
+      {
+        "title": "测试1",
+        "link": "/test/1/"
+      }
+    ]
+  }
+]

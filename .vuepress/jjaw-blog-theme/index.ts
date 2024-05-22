@@ -1,6 +1,5 @@
-import { fs, getDirname, path } from 'vuepress/utils'
+import { getDirname, path } from 'vuepress/utils'
 import type { Theme } from 'vuepress/core'
-import anchor from 'markdown-it-anchor'
 
 // 自己写的 giscus
 import { giscusCommentPlugin, type GiscusConfig } from '../giscus-comment'
@@ -80,6 +79,8 @@ export const jjawBlogTheme = ({seo,sitemap,giscus,externalLinkIcon,githubEdit}:{
             name: 'jjaw-blog-theme',
             // 主题的客户端配置文件的路径
             clientConfigFile: path.resolve(__dirname, 'client.ts'),
+            templateBuild:path.resolve(__dirname, "./build.html"),
+            templateDev:path.resolve(__dirname, "./dev.html"),
             // 使用插件
             plugins: [
                 linksCheckPlugin({}),

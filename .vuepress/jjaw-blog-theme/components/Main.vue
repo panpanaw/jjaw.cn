@@ -16,6 +16,11 @@
 </template>
 
 <style scoped>
+@media (max-width: 480px){
+    div.layout{
+        padding: 0;
+    }
+}
 .app-main{
     display: flex;
     flex-direction: column;

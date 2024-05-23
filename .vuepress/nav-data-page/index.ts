@@ -19,7 +19,7 @@ export function navAataPagePlugin(ignore:string[] = ['node_modules/**','.vuepres
                     throw new Error(`解析json文件出错! \n ${file} \n ${eror}`);
                 }
             }));
-            console.log(pachUrlpachMap);
+            // console.log(pachUrlpachMap);
             // 设置有效的页面
             for (const page of app.pages) {
                 if (!page.filePathRelative) {

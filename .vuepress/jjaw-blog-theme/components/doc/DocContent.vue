@@ -22,4 +22,10 @@ import ContentBox from '../box/ContentBox.vue';
     --content-box-header-padding: 0 1.5rem;
     --content-box-mian-padding: 1rem 1.5rem;
 }
+@media (max-width: 480px){
+    .doc-box{
+        --content-box-header-padding: 0 1rem;
+        --content-box-mian-padding: 1rem 1rem;
+    }
+}
 </style>

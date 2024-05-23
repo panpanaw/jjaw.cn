@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@giscus/vue": "^3.0.0",
-    "@vuepress/bundler-vite": "2.0.0-rc.11",
+    "@vuepress/bundler-vite": "2.0.0-rc.9",
     "@vuepress/plugin-active-header-links": "2.0.0-rc.30",
     "@vuepress/plugin-blog": "2.0.0-rc.30",
     "@vuepress/plugin-external-link-icon": "2.0.0-rc.28",

@@ -5,10 +5,22 @@ type GithubUser = {
     githubName:string, //github用户名称
     githubPage:string// github主页链接
 }
+const promiseMap = new Map<string,Promise<GithubUser | null>>();
+
 /**
  * 获取某邮箱的github用户的信息
  */
-export async function getGitHubUserInfoByEmail(email:string) {
+export function getGitHubUserInfoByEmail(email:string):Promise<GithubUser | null>{
+    let pr = promiseMap.get(email);
+    if(pr != undefined){
+        return pr;
+    }
+    pr = getGitHubUserInfoByEmailIn(email);
+    promiseMap.set(email,pr);
+    return pr;
+}
+
+async function getGitHubUserInfoByEmailIn(email:string) {
     let githubUser:GithubUser|null = null;
     let locKey = `github_user_${email}`;
     let locItem = localStorage.getItem(locKey);

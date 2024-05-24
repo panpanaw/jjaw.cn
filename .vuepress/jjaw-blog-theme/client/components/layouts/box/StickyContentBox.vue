@@ -3,7 +3,7 @@ import ContentBox from './ContentBox.vue';
 </script>
 <template>
     <ContentBox class="sticky-content-box">
-        <template #header>
+        <template #header v-if="$slots.header">
             <slot name="header"></slot>
         </template>
         <template #default>

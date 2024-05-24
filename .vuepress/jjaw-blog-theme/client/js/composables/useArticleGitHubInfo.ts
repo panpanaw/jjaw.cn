@@ -13,7 +13,7 @@ export type GethubUserContributor = {
 }
 
 /* 异步加载的，加载完成之后更新 */
-function gethubGithubUserInfo(users:GitContributor[]){
+export function useGetGithubUserInfo(users:GitContributor[]){
     const gethubUserContributors = reactive<GethubUserContributor[]>([]);
     for(const user of users){
         const gitUser = reactive<GethubUserContributor>({
@@ -47,7 +47,7 @@ export function useArticleGitHubInfo():ArticleGitHubInfo{
     const page = usePageData<GitPluginPageData>()
     const { git } = page.value;
     let articleGitHubInfo = reactive<ArticleGitHubInfo>({
-        gitHubContributors:gethubGithubUserInfo(git.contributors || []),
+        gitHubContributors:useGetGithubUserInfo(git.contributors || []),
         createdTime:git.createdTime || 0,
         updatedTime:git.updatedTime || 0
     });

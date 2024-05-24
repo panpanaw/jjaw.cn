@@ -33,9 +33,13 @@ https://plugin-md-enhance.vuejs.press/zh/
 :root{
     --tab-bg-color: var(--theme-c-bg) !important;
     --tab-nav-text-color: var(--theme-c-bg-tab-nav-text) !important;
-    --tab-nav-bg-color: var(--theme-c-bg-tab-nav) !important;
+    --tab-nav-bg-color: #eaeef2 !important;
+
     --tab-nav-hover-color: var(--theme-c-bg) !important;
     --vp-brc:var(--theme-c-bg-tab-nav) !important;
+}
+.dark{
+    --tab-nav-bg-color: #192532 !important
 }
 div.vp-tabs{
     border: 1px solid var(--theme-c-brc) !important;
@@ -44,4 +48,9 @@ div.vp-tabs{
 /* 任务列表 */
 :root{
     /* --vp-tc: var(#3eaf7c); */
+}
+
+/* 警告提示 */
+.markdown-body .hint-container > p.hint-container-title{
+    margin-top: 0.5rem;
 }

@@ -87,6 +87,7 @@ export const jjawBlogTheme = ({ seo, sitemap, giscus, externalLinkIcon, githubEd
             templateDev: path.resolve(__dirname, "./client/dev.html"),
             // 使用插件
             plugins: [
+                gitPlugin({}),
                 linksCheckPlugin({}),
                 externalLinkIconPlugin(externalLinkIcon),
                 nprogressPlugin(),
@@ -98,7 +99,6 @@ export const jjawBlogTheme = ({ seo, sitemap, giscus, externalLinkIcon, githubEd
                     headerAnchorSelector: ".header-anchor",
                     headerLinkSelector: ".vuepress-toc-link"
                 }),
-                gitPlugin({}),
                 giscusCommentPlugin(giscus),
                 tocPlugin(),
                 githubEditPlugin(githubEdit),
@@ -136,9 +136,13 @@ function buildBlogPluginOptions(): BlogPluginOptions {
             if (frontmatter.layout) return false
             return true
         },
-        getInfo:({ frontmatter, git = {}, data = {} }) => {
+        getInfo:(page) => {
             return {
-
+                title: page.frontmatter.title || page.title,
+                description:page.frontmatter.description,
+                tags: page.frontmatter.tags || [],
+                updatedTime:(page.data.git as any)?.updatedTime,
+                firstContributor:(page.data.git as any)?.contributors[0]
             }
         },
         category:[

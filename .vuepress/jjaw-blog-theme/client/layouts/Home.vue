@@ -3,11 +3,8 @@ import Main from '../components/layouts/page/Main.vue';
 import Header from '../components/layouts/page/Header.vue'
 import Body from '../components/layouts/page/ArticleBody.vue'
 import Footer from '../components/layouts/page/Footer.vue';
-import { useBlogCategory, useBlogType } from '@vuepress/plugin-blog/client'
-
-const blogType = useBlogType("star");
-const blogCategory = useBlogCategory("tags");
-
+import ListMain from '../components/home-page/list/ListMain.vue';
+import HNavMain from '../components/home-page/nav/HNavMain.vue';
 
 
 </script>
@@ -18,7 +15,12 @@ const blogCategory = useBlogCategory("tags");
         </template>
         <template #default>
             <Body>
-                qwe
+                <template #default>
+                    <ListMain></ListMain>
+                </template>
+                <template #nav>
+                    <HNavMain></HNavMain>
+                </template>
             </Body>
         </template>
         <template #footer>

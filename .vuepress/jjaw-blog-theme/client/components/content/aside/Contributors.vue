@@ -2,6 +2,7 @@
 <script setup lang="ts">
 import { useArticleGitHubInfo } from '../../../js/composables/useArticleGitHubInfo';
 import ContentBox from '../../layouts/box/ContentBox.vue';
+import HistoryIcon from '../../../imgs/history.vue';
 const { gitHubContributors } = useArticleGitHubInfo();
 function githubAvatarUrlAddSize(url:URL):string{
     const imgUrl = new URL(url);
@@ -27,7 +28,7 @@ function githubAvatarUrlAddSize(url:URL):string{
                             <span class="c-l1-email">{{ userinfo.email }}</span>
                         </div>
                         <div class="c-line2">
-                            <img class="c-l2-img" src="../../../imgs/历史.svg" />
+                            <HistoryIcon class="c-l2-img" ></HistoryIcon>
                             <span class="c-l2-commits">{{ userinfo.commits }}次提交</span>
                         </div>
                     </div>
@@ -42,9 +43,11 @@ function githubAvatarUrlAddSize(url:URL):string{
     align-items: center;
 }
 .c-l2-img{
-    height: 0.8rem;
+    width: 1rem;
+    height: 1rem;
     display: inline;
     margin-right: 0.1rem;
+    color: var(--contributor-text-commits-c);
 }
 .c-l2-commits{
     color: var(--contributor-text-commits-c);

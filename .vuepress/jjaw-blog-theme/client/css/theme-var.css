@@ -31,7 +31,7 @@
     --theme-c-bg-tab-nav-text: var(--theme-text-1);  /**导航栏文字颜色*/
 }
 .dark{
-    --theme-c-bg-tab-nav:#0a0f15;
+    --theme-c-bg-tab-nav:#131a23;
     --theme-c-bg-tab-nav-text: var(--theme-text-1);
 }
 
@@ -106,4 +106,75 @@
 */
 :root{
     --footer-line-c:var(--theme-c-brc); /* 分割线颜色 */
+}
+
+/*
+组件 ./home-page/nav/TagsList.vue .home-page/list/Item.vue
+*/
+:root{
+    --tags-list-tag-c: var(--theme-text-1);
+    --tags-list-tag-num-c: #ffffff;
+    --tags-list-tag-bgc: #cbf0ff;
+    --tags-list-tag-num-bgc: #32acff;
+    --tags-list-tag-txt-c:var(--tags-list-tag-num-bgc);
+}
+.colour-1{
+    --tags-list-tag-bgc: #eadbff;
+    --tags-list-tag-num-bgc: #ba4dff;
+    --tags-list-tag-txt-c:var(--tags-list-tag-num-bgc);
+}
+.colour-2{
+    --tags-list-tag-bgc: #a5e9ab;
+    --tags-list-tag-num-bgc: #2e974d;
+    --tags-list-tag-txt-c:var(--tags-list-tag-num-bgc);
+}
+.colour-3{
+    --tags-list-tag-bgc: #ffe6e6;
+    --tags-list-tag-num-bgc: #ff5555;
+    --tags-list-tag-txt-c:var(--tags-list-tag-num-bgc);
+}
+.colour-4{
+    --tags-list-tag-bgc: #ffd1e8;
+    --tags-list-tag-num-bgc: #ff3bd8;
+    --tags-list-tag-txt-c:var(--tags-list-tag-num-bgc);
+}
+
+.dark{
+    --tags-list-tag-num-c: #ffffff;
+    --tags-list-tag-bgc: #1c5e77;
+    --tags-list-tag-num-bgc: #007fd2;
+    --tags-list-tag-txt-c:var(--tags-list-tag-num-c);
+}
+.dark .colour-1{
+    --tags-list-tag-bgc: #4d2486;
+    --tags-list-tag-num-bgc: #a140ec;
+    --tags-list-tag-txt-c:var(--tags-list-tag-num-c);
+}
+.dark .colour-2{
+    --tags-list-tag-bgc: #07550e;
+    --tags-list-tag-num-bgc: #1ba143;
+    --tags-list-tag-txt-c:var(--tags-list-tag-num-c);
+}
+.dark .colour-3{
+    --tags-list-tag-bgc: #913030;
+    --tags-list-tag-num-bgc: #c56666;
+    --tags-list-tag-txt-c:var(--tags-list-tag-num-c);
+}
+.dark .colour-4{
+    --tags-list-tag-bgc: #96245d;
+    --tags-list-tag-num-bgc: #e53ab2;
+    --tags-list-tag-txt-c:var(--tags-list-tag-num-c);
+}
+
+/*
+组件 ./home-page/list/Item.vue
+*/
+:root{
+    --item-list-brc: var(--theme-c-brc);
+    --item-list-link-c : #0969da; 
+    --item-list-butln-c : #7d7d7d; 
+}
+.dark{
+    --item-list-link-c : var(--theme-c-logo);
+    --item-list-butln-c : #a0a0a0; 
 }

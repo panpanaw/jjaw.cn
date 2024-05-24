@@ -1,21 +1,20 @@
-<!-- 导航栏 -->
 <script setup lang="ts">
 import AdsList from '../../layouts/box/AdsList.vue';
-import NavList from './NavList.vue';
+import TagsList from './TagsList.vue';
 
 
 </script>
 <template>
-    <div class="nav">
-        <AdsList class="nax-box-agen" />
-        <NavList class="nav-box" />
+    <div class="hnav-main">
+        <AdsList class="ads"></AdsList>
+        <TagsList></TagsList>
     </div>
 </template>
 <style scoped>
-.nax-box-agen {
+.ads{
     margin-bottom: 1rem;
 }
-.nav {
+.hnav-main{
     height: 100%;
 }
 </style>

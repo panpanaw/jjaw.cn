@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ContentBox from '../box/ContentBox.vue';
+import ContentBox from '../../design/box/ContentBox.vue';
 
 </script>
 <template>

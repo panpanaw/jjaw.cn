@@ -4,9 +4,9 @@ import { jjawBlogTheme } from './jjaw-blog-theme/index.ts'
 
 const hostName = 'jjaw.cn';
 export default defineUserConfig({
-  lang: 'en-US',
-  title: 'VuePress',
-  description: 'My first VuePress Site',
+  lang: 'zh-CN',
+  title: '神奇小破站',
+  description: '欢迎来到神奇小破站，专注于分享最新的Java Web、前端开发、网络技术、Vue、JavaScript、TypeScript、CSS、HTML5以及Minecraft等相关内容。',
   theme: jjawBlogTheme({
     seo:{
       hostname: hostName

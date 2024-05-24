@@ -1,7 +1,7 @@
 <!-- 目录 -->
 <script setup lang="ts">
-import { useArticleGitHubInfo } from '../../js/composables/useArticleGitHubInfo';
-import ContentBox from '../box/ContentBox.vue';
+import { useArticleGitHubInfo } from '../../../js/composables/useArticleGitHubInfo';
+import ContentBox from '../../design/box/ContentBox.vue';
 const { gitHubContributors } = useArticleGitHubInfo();
 function githubAvatarUrlAddSize(url:URL):string{
     const imgUrl = new URL(url);
@@ -27,7 +27,7 @@ function githubAvatarUrlAddSize(url:URL):string{
                             <span class="c-l1-email">{{ userinfo.email }}</span>
                         </div>
                         <div class="c-line2">
-                            <img class="c-l2-img" src="../../imgs/历史.svg" />
+                            <img class="c-l2-img" src="../../../imgs/历史.svg" />
                             <span class="c-l2-commits">{{ userinfo.commits }}次提交</span>
                         </div>
                     </div>

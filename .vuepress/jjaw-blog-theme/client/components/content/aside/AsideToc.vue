@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import StickyContentBox from '../box/StickyContentBox.vue';
+import StickyContentBox from '../../design/box/StickyContentBox.vue';
 </script>
 <template>
         <StickyContentBox class="aside-toc-box">

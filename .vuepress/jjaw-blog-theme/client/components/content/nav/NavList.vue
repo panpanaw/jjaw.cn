@@ -1,7 +1,7 @@
 <!-- 导航栏 -->
 <script setup lang="ts">
-import NavItemList from '../../../nav-data-page/NavItemList.vue';
-import StickyContentBox from '../box/StickyContentBox.vue';
+import NavItemList from '../../../../../nav-data-page/NavItemList.vue';
+import StickyContentBox from '../../design/box/StickyContentBox.vue';
 
 
 </script>

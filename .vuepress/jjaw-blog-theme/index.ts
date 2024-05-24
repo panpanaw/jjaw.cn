@@ -24,6 +24,7 @@ import { nprogressPlugin } from '@vuepress/plugin-nprogress'
 // https://ecosystem.vuejs.press/zh/plugins/blog/
 // blog
 import { blogPlugin } from '@vuepress/plugin-blog'
+import type { BlogPluginOptions } from '@vuepress/plugin-blog';
 
 // https://ecosystem.vuejs.press/zh/plugins/seo/
 // seo 搜索引擎优化
@@ -63,12 +64,12 @@ import { prefersColorSchemePlugin } from '../prefers-color-scheme';
 import { navAataPagePlugin } from '../nav-data-page';
 
 const __dirname = getDirname(import.meta.url)
-export const jjawBlogTheme = ({seo,sitemap,giscus,externalLinkIcon,githubEdit}:{
-    seo:SeoPluginOptions,
-    sitemap:SitemapPluginOptions,
-    giscus:GiscusConfig
-    externalLinkIcon?:ExternalLinkIconPluginOptions,
-    githubEdit:githubEditPluginConfig
+export const jjawBlogTheme = ({ seo, sitemap, giscus, externalLinkIcon, githubEdit }: {
+    seo: SeoPluginOptions,
+    sitemap: SitemapPluginOptions,
+    giscus: GiscusConfig
+    externalLinkIcon?: ExternalLinkIconPluginOptions,
+    githubEdit: githubEditPluginConfig
 }) => {
     externalLinkIcon = externalLinkIcon || {
         locales: {
@@ -77,32 +78,32 @@ export const jjawBlogTheme = ({seo,sitemap,giscus,externalLinkIcon,githubEdit}:{
             }
         }
     };
-    const theme: Theme = (app)=>{
+    const theme: Theme = (app) => {
         return {
             name: 'jjaw-blog-theme',
             // 主题的客户端配置文件的路径
-            clientConfigFile: path.resolve(__dirname, 'client.ts'),
-            templateBuild:path.resolve(__dirname, "./build.html"),
-            templateDev:path.resolve(__dirname, "./dev.html"),
+            clientConfigFile: path.resolve(__dirname, './client/client.ts'),
+            templateBuild: path.resolve(__dirname, "./client/build.html"),
+            templateDev: path.resolve(__dirname, "./client/dev.html"),
             // 使用插件
             plugins: [
                 linksCheckPlugin({}),
                 externalLinkIconPlugin(externalLinkIcon),
                 nprogressPlugin(),
-                blogPlugin({}),
+                blogPlugin(buildBlogPluginOptions()),
                 seoPlugin(seo),
                 sitemapPlugin(sitemap),
                 prismjsPlugin({}),
                 activeHeaderLinksPlugin({
-                    headerAnchorSelector:".header-anchor",
-                    headerLinkSelector:".vuepress-toc-link"
+                    headerAnchorSelector: ".header-anchor",
+                    headerLinkSelector: ".vuepress-toc-link"
                 }),
                 gitPlugin({}),
                 giscusCommentPlugin(giscus),
                 tocPlugin(),
                 githubEditPlugin(githubEdit),
                 mdEnhancePlugin({
-                    tasklist:true, //任务列表
+                    tasklist: true, //任务列表
                     tabs: true,//选项卡
                     codetabs: true,//代码选项卡
                     hint: true,//提示容器
@@ -114,12 +115,52 @@ export const jjawBlogTheme = ({seo,sitemap,giscus,externalLinkIcon,githubEdit}:{
                 prefersColorSchemePlugin(),
                 navAataPagePlugin(),
             ],
-            extendsMarkdownOptions:(markdownOptions, app)=>{
-                markdownOptions.code = {...{
-                    lineNumbers:false
-                },...markdownOptions.code};
+            extendsMarkdownOptions: (markdownOptions, app) => {
+                markdownOptions.code = {
+                    ...{
+                        lineNumbers: false
+                    }, ...markdownOptions.code
+                };
             }
         }
     }
     return theme;
+}
+
+function buildBlogPluginOptions(): BlogPluginOptions {
+    return {
+        filter: ({ filePathRelative, frontmatter }) => {
+            // 舍弃那些不是从 Markdown 文件生成的页面
+            if (!filePathRelative) return false
+            // 舍弃那些没有使用默认布局的页面
+            if (frontmatter.layout) return false
+            return true
+        },
+        getInfo:({ frontmatter, git = {}, data = {} }) => {
+            return {
+
+            }
+        },
+        category:[
+            {
+                key:"tags",
+                getter:({ frontmatter }) => (frontmatter.tags as any) || [],
+                path:"/tags/",
+                layout: 'TagMap',
+                frontmatter: () => ({ title: '标签页' }),
+                itemPath: '/tags/:name/',
+                itemLayout: 'TagList',
+                itemFrontmatter: (name) => ({ title: `${name}标签` }),
+            }
+        ],
+        type:[
+            {
+                key: 'star',
+                filter: ({ frontmatter }) => frontmatter.star?true:false,
+                path: '/',
+                layout: 'Home',
+                frontmatter: () => ({}),
+            }
+        ]
+    }
 }

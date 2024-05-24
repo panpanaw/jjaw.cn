@@ -6,10 +6,12 @@
 <template>
     <div class="header">
         <div class="left">
-            <img src="../imgs/logo.svg" alt="logo" class="logo">
+            <img src="../../../imgs/logo.svg" alt="logo" class="logo">
             <span class="logo-f">神奇小破站</span>
         </div>
-        <div class="rigt">qwe</div>
+        <div class="rigt">
+            
+        </div>
     </div>
 </template>
 <style scoped>

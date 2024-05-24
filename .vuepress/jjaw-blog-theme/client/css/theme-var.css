@@ -100,3 +100,10 @@
 .dark{
     --nav-toc-active-c : var(--theme-c-logo);
 }
+
+/*
+组件 ./page/Footer.vue
+*/
+:root{
+    --footer-line-c:var(--theme-c-brc); /* 分割线颜色 */
+}

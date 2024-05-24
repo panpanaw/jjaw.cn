@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ClientOnly } from 'vuepress/client';
-import ContentBox from '../box/ContentBox.vue';
+import ContentBox from '../../design/box/ContentBox.vue';
 
 </script>
 <template>

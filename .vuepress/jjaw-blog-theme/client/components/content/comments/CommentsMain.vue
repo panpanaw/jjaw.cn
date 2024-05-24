@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import GiscusComment from '../../../../../giscus-comment/GiscusComment.vue'
-import ContentBox from '../../design/box/ContentBox.vue';
+import ContentBox from '../../layouts/box/ContentBox.vue';
 
 </script>
 <template>

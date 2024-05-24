@@ -1,7 +1,7 @@
 <!-- 目录 -->
 <script setup lang="ts">
 import { useArticleGitHubInfo } from '../../../js/composables/useArticleGitHubInfo';
-import ContentBox from '../../design/box/ContentBox.vue';
+import ContentBox from '../../layouts/box/ContentBox.vue';
 const { gitHubContributors } = useArticleGitHubInfo();
 function githubAvatarUrlAddSize(url:URL):string{
     const imgUrl = new URL(url);

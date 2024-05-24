@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import Main from '../components/design/page/Main.vue';
-import Header from '../components/design/page/Header.vue'
-import Body from '../components/design/page/ArticleBody.vue'
-import Footer from '../components/design/page/Footer.vue';
+import Main from '../components/layouts/page/Main.vue';
+import Header from '../components/layouts/page/Header.vue'
+import Body from '../components/layouts/page/ArticleBody.vue'
+import Footer from '../components/layouts/page/Footer.vue';
 
 
 </script>

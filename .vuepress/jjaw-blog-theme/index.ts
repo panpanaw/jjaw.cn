@@ -150,7 +150,7 @@ function buildBlogPluginOptions(): BlogPluginOptions {
                 key:"tags",
                 getter:({ frontmatter }) => (frontmatter.tags as any) || [],
                 path:"/tags/",
-                layout: 'TagMap',
+                layout: 'Home',
                 frontmatter: () => ({ title: '标签页' }),
                 itemPath: '/tags/:name/',
                 itemLayout: 'TagList',

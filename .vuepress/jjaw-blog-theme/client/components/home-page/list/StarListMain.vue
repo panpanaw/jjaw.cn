@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { useBlogCategory, useBlogType } from '@vuepress/plugin-blog/client';
+import { useBlogType } from '@vuepress/plugin-blog/client';
 import ItemList from './ItemList.vue'
 const blogType = useBlogType("star");
-const blogCategory = useBlogCategory("tags");
 
 </script>
 <template>

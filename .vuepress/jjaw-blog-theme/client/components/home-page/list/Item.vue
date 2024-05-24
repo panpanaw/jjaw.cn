@@ -24,7 +24,7 @@ const info = item.info;
             <CalendarIcon class="calender-i"></CalendarIcon>
             <span class="date-n">{{ tiemF(info.updatedTime) }}</span>
             <TagIcon class="tag-i"></TagIcon>
-            <div class="tag-n" :class="colourClassFun(tag)" v-for="tag of info.tags">{{ tag }}</div>
+            <div class="tag-n" :class="colourClassFun(tag)" v-for="tag of info.tags" :key="tag">{{ tag }}</div>
         </div>
     </ContentBox>
 </template>

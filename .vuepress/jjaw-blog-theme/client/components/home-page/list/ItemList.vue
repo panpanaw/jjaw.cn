@@ -9,7 +9,7 @@ let props = defineProps<{
 </script>
 <template>
     <div class="list">
-        <Item class="item" v-for="item of props.items" :item="item"></Item>
+        <Item class="item" v-for="item of props.items" :item="item" :key="item.path"></Item>
     </div>
 </template>
 <style scoped>

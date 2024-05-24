@@ -5,7 +5,6 @@ import { hash } from '../../../js/client/hash';
 import { RouteLink } from 'vuepress/client';
 const colourClassFun = (s:string)=>`colour-${Math.abs(hash(s)%5)}`;
 const blogCategory = useBlogCategory("tags");
-console.log(blogCategory.value);
 </script>
 <template>
     <StickyContentBox class="tag-box">
@@ -14,7 +13,7 @@ console.log(blogCategory.value);
         </template>
         <template #default>
             <div class="tag-list">
-                <RouteLink class="tag-item"  v-for="{items,path},key of blogCategory.map" :to="path" :class="colourClassFun(key)">
+                <RouteLink class="tag-item"  v-for="{items,path},key of blogCategory.map" :to="path" :class="colourClassFun(key)" :key="key">
                     <div class="tag-name">{{ key }}</div>
                     <div class="tag-num">{{ items.length }}</div>
                 </RouteLink>

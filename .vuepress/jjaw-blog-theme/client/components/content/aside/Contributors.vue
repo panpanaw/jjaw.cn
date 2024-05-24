@@ -17,7 +17,7 @@ function githubAvatarUrlAddSize(url:URL):string{
         </template>
         <template #default>
             <div class="contributors">
-                <a v-for="userinfo of gitHubContributors" class="contributor" :href="userinfo.githubUrl">
+                <a v-for="userinfo of gitHubContributors" class="contributor" :href="userinfo.githubUrl" :key="userinfo.email">
                     <div class="contributor-img">
                         <img class="contributor-img-img" v-if="userinfo.avatarUrl" :src="githubAvatarUrlAddSize(userinfo.avatarUrl)" :alt="userinfo.name">
                         <div  class="contributor-img-div" v-else>{{ userinfo.name.charAt(0) }}</div>

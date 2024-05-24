@@ -8,11 +8,13 @@ import { defineClientConfig } from 'vuepress/client'
 import Layout from './layouts/Layout.vue';
 import NotFound from './layouts/NotFound.vue';
 import Home from './layouts/Home.vue';
+import TagList from './layouts/TagList.vue'
 
 export default defineClientConfig({
   layouts: {
     Layout,
     NotFound,
-    Home
+    Home,
+    TagList
   },
 })

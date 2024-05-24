@@ -2,8 +2,9 @@
 import { useBlogCategory } from '@vuepress/plugin-blog/client';
 import StickyContentBox from '../../layouts/box/StickyContentBox.vue'
 import { hash } from '../../../js/client/hash';
-import { RouteLink } from 'vuepress/client';
-const colourClassFun = (s:string)=>`colour-${Math.abs(hash(s)%5)}`;
+import { RouteLink, useRoute } from 'vuepress/client';
+const route = useRoute();
+const colourClassFun = (s: string) => `colour-${Math.abs(hash(s) % 5)}`;
 const blogCategory = useBlogCategory("tags");
 </script>
 <template>
@@ -13,7 +14,8 @@ const blogCategory = useBlogCategory("tags");
         </template>
         <template #default>
             <div class="tag-list">
-                <RouteLink class="tag-item"  v-for="{items,path},key of blogCategory.map" :to="path" :class="colourClassFun(key)" :key="key">
+                <RouteLink class="tag-item" v-for="{ items, path }, key of blogCategory.map" :to="path"
+                    :class="[colourClassFun(key), route.path == path ? 'active' : null]" :key="key">
                     <div class="tag-name">{{ key }}</div>
                     <div class="tag-num">{{ items.length }}</div>
                 </RouteLink>
@@ -22,11 +24,12 @@ const blogCategory = useBlogCategory("tags");
     </StickyContentBox>
 </template>
 <style scoped>
-.tag-box{
+.tag-box {
     max-height: calc(100vh - var(--header-height) - 1.5rem);
-    --content-box-mian-padding:0;
+    --content-box-mian-padding: 0;
 }
-.tag-num{
+
+.tag-num {
     font-weight: bolder;
     font-size: 0.8rem;
     margin-left: 0.3rem;
@@ -38,11 +41,13 @@ const blogCategory = useBlogCategory("tags");
     text-align: center;
     border-radius: 1rem;
 }
-.tag-name{
+
+.tag-name {
     font-weight: bolder;
     color: var(--tags-list-tag-c);
 }
-.tag-item{
+
+.tag-item {
     background-color: var(--tags-list-tag-bgc);
     padding: 0.5rem;
     border-radius: 0.5rem;
@@ -50,7 +55,23 @@ const blogCategory = useBlogCategory("tags");
     display: flex;
     align-items: center;
 }
-.tag-list{
+
+.tag-item:hover .tag-name,
+.tag-item.active .tag-name {
+    color: var(--tags-list-tag-c-hover);
+}
+
+.tag-item:hover .tag-num,
+.tag-item.active .tag-num {
+    background-color: var(--tags-list-tag-num-bgc-hover);
+}
+
+.tag-item:hover,
+.tag-item.active {
+    background-color: var(--tags-list-tag-bgc-hover);
+}
+
+.tag-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

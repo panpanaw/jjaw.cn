@@ -117,26 +117,42 @@
     --tags-list-tag-bgc: #cbf0ff;
     --tags-list-tag-num-bgc: #32acff;
     --tags-list-tag-txt-c:var(--tags-list-tag-num-bgc);
+
+    --tags-list-tag-bgc-hover: #00a6eb;
+    --tags-list-tag-num-bgc-hover: #0081d8;
+    --tags-list-tag-c-hover:#ffffff;
 }
 .colour-1{
     --tags-list-tag-bgc: #eadbff;
     --tags-list-tag-num-bgc: #ba4dff;
     --tags-list-tag-txt-c:var(--tags-list-tag-num-bgc);
+
+    --tags-list-tag-bgc-hover: #9447ff;
+    --tags-list-tag-num-bgc-hover: #7000ff;
 }
 .colour-2{
     --tags-list-tag-bgc: #a5e9ab;
     --tags-list-tag-num-bgc: #2e974d;
     --tags-list-tag-txt-c:var(--tags-list-tag-num-bgc);
+
+    --tags-list-tag-bgc-hover: #00aa0e;
+    --tags-list-tag-num-bgc-hover: #085820;
 }
 .colour-3{
     --tags-list-tag-bgc: #ffe6e6;
     --tags-list-tag-num-bgc: #ff5555;
     --tags-list-tag-txt-c:var(--tags-list-tag-num-bgc);
+
+    --tags-list-tag-bgc-hover: #ff4040;
+    --tags-list-tag-num-bgc-hover: #d10000;
 }
 .colour-4{
     --tags-list-tag-bgc: #ffd1e8;
     --tags-list-tag-num-bgc: #ff3bd8;
     --tags-list-tag-txt-c:var(--tags-list-tag-num-bgc);
+
+    --tags-list-tag-bgc-hover: #ff0080;
+    --tags-list-tag-num-bgc-hover: #c4009d;
 }
 
 .dark{

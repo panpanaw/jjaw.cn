@@ -28,9 +28,18 @@
 }
 .layout {
     /* max-width: var(--mian-max-width); */
-    width: min(100%,var(--mian-max-width));
+    width: min(100%,var(--layout-max-width));
     padding: 0 1rem;
 }
+/* nav 适配 */
+.layout{
+    --layout-max-width:var(--main-max-width-no-nav);
+}
+.layout:has(.body .nav):has(.body .aside){
+    --layout-max-width:var(--mian-max-width);
+}
+
+
 .main{
     flex: 1;
     min-width: 0;

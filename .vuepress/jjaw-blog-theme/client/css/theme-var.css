@@ -58,8 +58,11 @@
 */
 :root{
     --mian-max-width: 1440px;
+    --main-max-width-no-nav: 1260px;
     --main-nav-width: 16rem;
     --main-aside-width: 16rem;
+
+    --layout-max-width:var(--mian-max-width);
 }
 
 /**

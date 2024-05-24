@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import ContentBox from '../../layouts/box/ContentBox.vue';
-import { usePageFrontmatter } from "vuepress/client"
+import { usePageFrontmatter, RouteLink } from "vuepress/client"
 import TagIcon from '../../../imgs/tag.vue';
 import { hash } from '../../../js/client/hash';
-const colourClassFun = (s:string)=>`colour-${Math.abs(hash(s)%5)}`;
+
+const getTagUrl = (tag: string) => `/tags/${encodeURI(tag)}/`;
+const colourClassFun = (s: string) => `colour-${Math.abs(hash(s) % 5)}`;
 const frontmatter = usePageFrontmatter();
 
 </script>
@@ -12,18 +14,28 @@ const frontmatter = usePageFrontmatter();
         <template #default>
             <h1 class="doc-h-h1">{{ frontmatter.title }}</h1>
             <p class="doc-h-p">{{ frontmatter.description }}</p>
-            <div class="tags" v-if="frontmatter.tags && frontmatter.tags.length>0">
+            <div class="tags" v-if="frontmatter.tags && frontmatter.tags.length > 0">
                 <TagIcon class="tag-i"></TagIcon>
-                <div class="tag-n" v-for="tag of frontmatter.tags" :class="colourClassFun(tag)" :key="tag">
+                <RouteLink class="tag-n" v-for="tag of frontmatter.tags" :to="getTagUrl(tag)"
+                    :class="colourClassFun(tag)" :key="tag">
                     {{ tag }}
-                </div>
+                </RouteLink>
             </div>
             <div v-else style="height: 0.1rem;"></div>
         </template>
     </ContentBox>
 </template>
 <style scoped>
-.tag-n{
+.tag-n.active {
+    cursor: default;
+}
+
+.tag-n:hover {
+    background-color: var(--tags-list-tag-bgc-hover);
+    color: var(--tags-list-tag-c-hover);
+}
+
+.tag-n {
     font-size: 0.8rem;
     font-weight: bolder;
     background-color: var(--tags-list-tag-bgc);
@@ -33,27 +45,30 @@ const frontmatter = usePageFrontmatter();
     line-height: 1.2rem;
     color: var(--tags-list-tag-txt-c);
 }
-.tag-i{
+
+.tag-i {
     width: 1rem;
     height: 1rem;
     margin-right: 0.2rem;
 }
-.tags{
+
+.tags {
     padding: 0.2rem 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     color: var(--item-list-butln-c);
 }
-.doc-h-h1{
+
+.doc-h-h1 {
     font-weight: bolder;
     font-size: 2rem;
     margin: 2rem 0;
     line-height: 2.5rem;
 }
-.doc-h-p{
+
+.doc-h-p {
     font-size: 1.1rem;
     margin-bottom: 1rem;
 }
-
 </style>

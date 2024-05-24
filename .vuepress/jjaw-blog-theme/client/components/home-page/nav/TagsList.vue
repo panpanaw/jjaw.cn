@@ -55,7 +55,9 @@ const blogCategory = useBlogCategory("tags");
     display: flex;
     align-items: center;
 }
-
+.tag-item.active{
+    cursor: default;
+}
 .tag-item:hover .tag-name,
 .tag-item.active .tag-name {
     color: var(--tags-list-tag-c-hover);

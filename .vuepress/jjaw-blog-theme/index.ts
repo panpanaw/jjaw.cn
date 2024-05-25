@@ -1,5 +1,5 @@
 import { getDirname, path } from 'vuepress/utils'
-import type { Theme } from 'vuepress/core'
+import type { Page, Theme } from 'vuepress/core'
 
 // 自己写的 giscus
 import { giscusCommentPlugin, type GiscusConfig } from '../giscus-comment'
@@ -128,6 +128,7 @@ export const jjawBlogTheme = ({ seo, sitemap, giscus, externalLinkIcon, githubEd
 }
 
 function buildBlogPluginOptions(): BlogPluginOptions {
+    const sorterFun = (pageA:Page,pageB:Page)=>((pageB.data['git'] as any)?.updatedTime || 0)-((pageA.data['git'] as any)?.updatedTime || 0);
     return {
         filter: ({ filePathRelative, frontmatter }) => {
             // 舍弃那些不是从 Markdown 文件生成的页面
@@ -155,6 +156,7 @@ function buildBlogPluginOptions(): BlogPluginOptions {
                 itemPath: '/tags/:name/',
                 itemLayout: 'TagList',
                 itemFrontmatter: (name) => ({ title: `${name}标签` }),
+                sorter:sorterFun
             }
         ],
         type:[
@@ -164,6 +166,7 @@ function buildBlogPluginOptions(): BlogPluginOptions {
                 path: '/',
                 layout: 'Home',
                 frontmatter: () => ({}),
+                sorter:sorterFun
             }
         ]
     }

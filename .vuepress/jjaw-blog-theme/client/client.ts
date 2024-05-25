@@ -9,12 +9,14 @@ import Layout from './layouts/Layout.vue';
 import NotFound from './layouts/NotFound.vue';
 import Home from './layouts/Home.vue';
 import TagList from './layouts/TagList.vue'
+import GithubEditHelp from './layouts/GithubEditHelp.vue'
 
 export default defineClientConfig({
   layouts: {
     Layout,
     NotFound,
     Home,
-    TagList
+    TagList,
+    GithubEditHelp,
   },
 })

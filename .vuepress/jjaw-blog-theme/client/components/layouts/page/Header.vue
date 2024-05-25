@@ -1,14 +1,16 @@
 <!-- 页面头 -->
 <script setup lang="ts">
+import { RouteLink } from 'vuepress/client';
+
 
 
 </script>
 <template>
     <div class="header">
-        <div class="left">
+        <RouteLink class="left" :to="'/'">
             <img src="../../../imgs/logo.svg" alt="logo" class="logo">
             <span class="logo-f">神奇小破站</span>
-        </div>
+        </RouteLink>
         <div class="rigt">
             
         </div>

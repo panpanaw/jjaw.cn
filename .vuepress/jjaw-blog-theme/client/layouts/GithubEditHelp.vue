@@ -3,7 +3,7 @@ import Main from '../components/layouts/page/Main.vue';
 import Header from '../components/layouts/page/Header.vue'
 import Body from '../components/layouts/page/ArticleBody.vue'
 import Footer from '../components/layouts/page/Footer.vue';
-import AsideToc from '../components/content/aside/AsideToc.vue';
+import AsideMain from '../components/content/aside/AsideMain.vue';
 import DocContent from '../components/content/doc/DocContent.vue';
 import { useGithubEditTitle, useGithubEditUrl } from "../../../go-github-edit/githubedit";
 import ContentBox from '../components/layouts/box/ContentBox.vue';
@@ -42,7 +42,7 @@ const githubEditUrl = useGithubEditUrl();
                     <DocContent></DocContent>
                 </template>
                 <template #aside>
-                    <AsideToc></AsideToc>
+                    <AsideMain></AsideMain>
                 </template>
             </Body>
         </template>

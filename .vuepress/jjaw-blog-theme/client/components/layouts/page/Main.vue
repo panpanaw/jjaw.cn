@@ -32,7 +32,7 @@
     padding: 0 1rem;
 }
 /* nav 适配 */
-.layout{
+.layout:has(.body){
     --layout-max-width:var(--main-max-width-no-nav);
 }
 .layout:has(.body .nav):has(.body .aside){

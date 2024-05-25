@@ -1,4 +1,4 @@
-export function hash(s: string) {
+export function hashString(s: string) {
     var hash = 0;
     if (s.length === 0) return hash;
     for (let i = 0; i < s.length; i++) {

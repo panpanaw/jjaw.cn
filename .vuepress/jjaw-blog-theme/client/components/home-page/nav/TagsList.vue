@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useBlogCategory } from '@vuepress/plugin-blog/client';
 import StickyContentBox from '../../layouts/box/StickyContentBox.vue'
-import { hash } from '../../../js/client/hash';
+import { hashString } from '../../../js/client/HashString';
 import { RouteLink, useRoute } from 'vuepress/client';
 const route = useRoute();
-const colourClassFun = (s: string) => `colour-${Math.abs(hash(s) % 5)}`;
+const colourClassFun = (s: string) => `colour-${Math.abs(hashString(s) % 5)}`;
 const blogCategory = useBlogCategory("tags");
 </script>
 <template>

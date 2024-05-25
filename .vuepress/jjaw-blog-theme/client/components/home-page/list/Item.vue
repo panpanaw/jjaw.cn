@@ -5,10 +5,10 @@ import UserIcon from '../../../imgs/user.vue'
 import CalendarIcon from '../../../imgs/calendar.vue';
 import { dateFormat } from '../../../js/client/Time';
 import TagIcon from '../../../imgs/tag.vue';
-import { hash } from '../../../js/client/hash';
+import { hashString } from '../../../js/client/HashString';
 const route = useRoute();
 const getTagUrl = (tag:string)=>`/tags/${encodeURI(tag)}/`;
-const colourClassFun = (s: string) => `colour-${Math.abs(hash(s) % 5)}`;
+const colourClassFun = (s: string) => `colour-${Math.abs(hashString(s) % 5)}`;
 const tiemF = (tiem: number) => dateFormat(new Date(tiem), (Y, M, D, h, m) => `${Y}-${M}-${D} ${h}:${m}`);
 const { item } = defineProps<{
     item: { path: string, info: any }

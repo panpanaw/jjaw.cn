@@ -2,10 +2,10 @@
 import ContentBox from '../../layouts/box/ContentBox.vue';
 import { usePageFrontmatter, RouteLink } from "vuepress/client"
 import TagIcon from '../../../imgs/tag.vue';
-import { hash } from '../../../js/client/hash';
+import { hashString } from '../../../js/client/HashString';
 
 const getTagUrl = (tag: string) => `/tags/${encodeURI(tag)}/`;
-const colourClassFun = (s: string) => `colour-${Math.abs(hash(s) % 5)}`;
+const colourClassFun = (s: string) => `colour-${Math.abs(hashString(s) % 5)}`;
 const frontmatter = usePageFrontmatter();
 
 </script>

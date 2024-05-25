@@ -25,3 +25,4 @@ comment: true
 ### 7.编辑拉去请求信息，完成后点击`Create pull request`创建拉取请求
 ![](./imgs/edit7.webp)
 ### 8.等待合并更新
+完成之后等待一段时间，如果没问题的话就会更新到网站上。

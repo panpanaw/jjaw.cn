@@ -9,7 +9,8 @@ export default defineUserConfig({
   description: '欢迎来到神奇小破站，专注于分享最新的Java Web、前端开发、网络技术、Vue、JavaScript、TypeScript、CSS、HTML5以及Minecraft等相关内容。',
   theme: jjawBlogTheme({
     seo:{
-      hostname: hostName
+      hostname: hostName,
+      isArticle: (page)=> (!page.frontmatter.layout) || (page.frontmatter.layout=='Layout'),
     },
     sitemap:{
       hostname: hostName,

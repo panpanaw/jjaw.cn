@@ -44,6 +44,7 @@
     --contributor-text-commits-c:var(--theme-text-2); /* 提交数量颜色 */
     --contributor-img-border-c: var(--theme-c-brc); /* 头像框边框颜色 */
     --contributor-img-bg-c: var(--theme-c-bg-tab-nav); /* 头像框默认背景色 */
+    --contributor-edit-link-c:#0969da;
 }
 
 /**

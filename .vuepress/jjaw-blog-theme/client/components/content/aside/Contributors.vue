@@ -3,6 +3,7 @@
 import { useArticleGitHubInfo } from '../../../js/composables/useArticleGitHubInfo';
 import ContentBox from '../../layouts/box/ContentBox.vue';
 import HistoryIcon from '../../../imgs/history.vue';
+import ToEditOnGitHubHelp from '../../../../../go-github-edit/ToEditOnGitHubHelp.vue';
 const { gitHubContributors } = useArticleGitHubInfo();
 function githubAvatarUrlAddSize(url:URL):string{
     const imgUrl = new URL(url);
@@ -33,11 +34,19 @@ function githubAvatarUrlAddSize(url:URL):string{
                         </div>
                     </div>
                 </a>
+                <ToEditOnGitHubHelp class="to-edit">+ 成为贡献者</ToEditOnGitHubHelp>
             </div>
         </template>
     </ContentBox>
 </template>
 <style scoped>
+.to-edit:hover{
+    text-decoration: underline;
+}
+.to-edit{
+    font-size: 0.8rem;
+    color: var(--contributor-edit-link-c);
+}
 .c-line2{
     display: flex;
     align-items: center;

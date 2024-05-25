@@ -40,27 +40,27 @@ let str4 = new String("Hello World");
 - 使用加号（+）操作符
 最简单的连接字符串的方法是使用加号 +。这个运算符可以将多个字符串值连接起来，形成一个新的字符串。
 ``` js
-let firstName = '蓝';
-let lastName = '桥';
+let firstName = '神奇';
+let lastName = '小破站';
 let fullName = firstName + lastName; 
-console.log(fullName); // "蓝桥"
+console.log(fullName); // "神奇小破站"
 ```
 
 - 使用模板字符串
 ES6引入了模板字符串，这是一种新的字符串拼接方式，可以使用反引号 ` 来创建。
 ``` js
-let firstName = '蓝';
-let lastName = '桥';
+let firstName = '神奇';
+let lastName = '小破站';
 let greeting = `你好，${firstName}${lastName}！`; 
-console.log(greeting); // "你好，蓝桥！"
+console.log(greeting); // "你好，神奇小破站！"
 ```
 
 - 使用concat()方法
 ``` js
-let firstName = '蓝';
-let lastName = '桥';
+let firstName = '神奇';
+let lastName = '小破站';
 let fullName = firstName.concat(lastName); 
-console.log(fullName); // "蓝桥"
+console.log(fullName); // "神奇小破站"
 ```
 
 

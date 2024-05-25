@@ -7,6 +7,7 @@ import AsideMain from '../components/content/aside/AsideMain.vue';
 import DocContent from '../components/content/doc/DocContent.vue';
 import { useGithubEditTitle, useGithubEditUrl } from "../../../go-github-edit/githubedit";
 import ContentBox from '../components/layouts/box/ContentBox.vue';
+import { ClientOnly } from 'vuepress/client';
 const githubEditTitle = useGithubEditTitle();
 const githubEditUrl = useGithubEditUrl();
 
@@ -26,11 +27,13 @@ const githubEditUrl = useGithubEditUrl();
                         </template>
                         <template #default>
                             <div class="edit-c">
-                                <h2 class="edit-title">{{ githubEditTitle }}</h2>
-                                <a class="edit-go" :href="githubEditUrl">
-                                    <span>编辑此文章</span>
-                                    <span>&nbsp;></span>
-                                </a>
+                                <ClientOnly>
+                                    <h2 class="edit-title">{{ githubEditTitle }}</h2>
+                                    <a class="edit-go" :href="githubEditUrl">
+                                        <span>编辑此文章</span>
+                                        <span>&nbsp;></span>
+                                    </a>
+                                </ClientOnly>
                             </div>
                         </template>
                     </ContentBox>
@@ -52,12 +55,13 @@ const githubEditUrl = useGithubEditUrl();
     </Main>
 </template>
 <style scoped>
-.edit-c{
+.edit-c {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 2rem 0;
 }
+
 .edit-box {
     min-width: min(100%, 40rem);
 }

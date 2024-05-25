@@ -63,7 +63,7 @@ const frontmatter = usePageFrontmatter();
 .doc-h-h1 {
     font-weight: bolder;
     font-size: 2rem;
-    margin: 2rem 0;
+    margin: 2rem 0 1rem 0;
     line-height: 2.5rem;
 }
 

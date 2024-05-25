@@ -5,9 +5,12 @@ import ContentBox from '../../layouts/box/ContentBox.vue';
 import CalendarIcon from '../../../imgs/calendar.vue';
 import { GitPluginPageData } from '@vuepress/plugin-git';
 import EditIcon from '../../../imgs/edit.vue';
+import ToEditOnGitHubHelp from '../../../../../go-github-edit/ToEditOnGitHubHelp.vue';
 const tiemF = (tiem: number) => dateFormat(new Date(tiem), (Y, M, D, h, m) => `${Y}-${M}-${D} ${h}:${m}`);
 const page = usePageData<GitPluginPageData>();
 const { git } = page.value;
+
+
 </script>
 <template>
     <ContentBox class="doc-box">
@@ -17,9 +20,9 @@ const { git } = page.value;
                     <CalendarIcon class="calender-i"></CalendarIcon>
                     <span class="calender-t">{{ tiemF(git.updatedTime) }}</span>
                 </div>
-                <div class="h-right">
+                <ToEditOnGitHubHelp class="h-right">
                     <EditIcon class="edit-i"></EditIcon>
-                </div>
+                </ToEditOnGitHubHelp>
             </div>
         </template>
         <template #default>

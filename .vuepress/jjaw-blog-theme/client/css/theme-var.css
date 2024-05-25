@@ -197,3 +197,17 @@
     --item-list-link-c : var(--theme-c-logo);
     --item-list-butln-c : #a0a0a0; 
 }
+
+/*
+布局 GithubEditHelp.vue
+*/
+:root{
+    --github-edit-help-edit-go-bgc: #3cabff;
+    --github-edit-help-edit-go-bgc-hover:#006eff;
+    --github-edit-help-edit-go-c: #ffffff;
+    --github-edit-help-edit-go-c-hover: #ffffff;
+}
+.dark{
+    --github-edit-help-edit-go-bgc: #0052be;
+    --github-edit-help-edit-go-bgc-hover:#25a4ff;
+}

@@ -49,6 +49,7 @@ const closeNavAndAside = ()=>{isNavOpen.value=false;isAsideOpen.value=false}
         right: 0;
         top: 0;
         height: 100%;
+        /* transform:translateX(calc(var(--main-aside-width) + 1rem)); */
         transform:translateX(calc(0rem - 100vw - 1rem));
         /* display: none; */
     }

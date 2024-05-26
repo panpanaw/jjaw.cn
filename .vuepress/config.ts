@@ -17,9 +17,9 @@ export default defineUserConfig({
       changefreq: "monthly"
     },
     giscus:{
-      repo: "jianjianai/vue.js.jjaw.cn.articles",
+      repo: "jianjianai/jjaw.cn",
       repoId: "R_kgDOKsd6yQ",
-      category: "vue.js.jjaw.cn.articles",
+      category: "jjaw.cn",
       categoryId: "DIC_kwDOKsd6yc4CbRMH",
       mapping: "pathname",
       strict: "0",
@@ -31,7 +31,7 @@ export default defineUserConfig({
       loading: "eager"
     },
     githubEdit:{
-      githubAdderss:"https://github.com/jianjianai/vue.js.jjaw.cn.articles",
+      githubAdderss:"https://github.com/jianjianai/jjaw.cn",
       branche:"master",
       helpPath:"/edit-on-github/"
     }

@@ -48,12 +48,18 @@
 }
 
 /**
-布局 ./Main.vue  ./nav/NavMain.vue ./aside/AsideToc.vue  ./aside/navNavList.vue
+布局 ./Main.vue  ./nav/NavMain.vue ./aside/AsideToc.vue ./page/ArticleBody.vue  ./aside/navNavList.vue
 */
 :root{
     --header-height:3.5rem;
+    --mobile-menu-height: 3rem;
 }
-
+/**
+布局 ./box/StickyContentBox.vue
+*/
+:root{
+    --header-blank-height: var(--header-height);
+}
 /**
 组件./Main.vue
 */
@@ -64,6 +70,11 @@
     --main-aside-width: 16rem;
 
     --layout-max-width:var(--mian-max-width);
+    --mobile-menu-text-c:var(--theme-text-2);
+    --main-mobile-shade-bgc:rgba(0, 0, 0, 0.485);
+}
+.dark{
+    --main-mobile-shade-bgc:rgba(0, 0, 0, 0.76);
 }
 
 /**

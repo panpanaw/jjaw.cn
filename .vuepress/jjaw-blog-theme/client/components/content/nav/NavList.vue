@@ -6,7 +6,7 @@ import StickyContentBox from '../../layouts/box/StickyContentBox.vue';
 
 </script>
 <template>
-    <StickyContentBox class="nav-toc-box">
+    <StickyContentBox>
         <template #header>
             <span style="font-weight: bolder;">文章导航</span>
         </template>
@@ -16,9 +16,6 @@ import StickyContentBox from '../../layouts/box/StickyContentBox.vue';
     </StickyContentBox>
 </template>
 <style>
-.nav-toc-box{
-    max-height: calc(100vh - var(--header-height) - 1.5rem);
-}
 .nav-toc > ul{
     list-style: none;
 }

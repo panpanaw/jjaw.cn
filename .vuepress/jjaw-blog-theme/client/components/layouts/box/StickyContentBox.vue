@@ -14,6 +14,7 @@ import ContentBox from './ContentBox.vue';
 <style scoped>
 .sticky-content-box{
     position: sticky;
-    top: calc(var(--header-height) + 1rem);
+    top: calc(var(--header-blank-height) + 1rem);
+    max-height: calc(100vh - var(--header-blank-height) - 1.5rem);
 }
 </style>

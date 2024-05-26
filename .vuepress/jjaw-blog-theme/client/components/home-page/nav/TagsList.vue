@@ -25,7 +25,6 @@ const blogCategory = useBlogCategory("tags");
 </template>
 <style scoped>
 .tag-box {
-    max-height: calc(100vh - var(--header-height) - 1.5rem);
     --content-box-mian-padding: 0;
 }
 

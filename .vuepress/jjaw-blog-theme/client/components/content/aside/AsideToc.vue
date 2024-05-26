@@ -2,7 +2,7 @@
 import StickyContentBox from '../../layouts/box/StickyContentBox.vue';
 </script>
 <template>
-        <StickyContentBox class="aside-toc-box">
+        <StickyContentBox>
             <template #header>
                 <span style="font-weight: bolder;">页面导航</span>
             </template>
@@ -12,10 +12,6 @@ import StickyContentBox from '../../layouts/box/StickyContentBox.vue';
         </StickyContentBox>
 </template>
 <style>
-.aside-toc-box{
-    max-height: calc(100vh - var(--header-height) - 1.5rem);
-}
-
 .aside-toc > ul{
     list-style: none;
 }

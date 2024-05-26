@@ -4,7 +4,7 @@ import { useArticleGitHubInfo } from '../../../js/composables/useArticleGitHubIn
 import ContentBox from '../../layouts/box/ContentBox.vue';
 import HistoryIcon from '../../../imgs/history.vue';
 import ToEditOnGitHubHelp from '../../../../../go-github-edit/ToEditOnGitHubHelp.vue';
-const { gitHubContributors } = useArticleGitHubInfo();
+const articleGitHubInfo = useArticleGitHubInfo();
 function githubAvatarUrlAddSize(url:URL):string{
     const imgUrl = new URL(url);
     imgUrl.searchParams.append("s","64");
@@ -18,7 +18,7 @@ function githubAvatarUrlAddSize(url:URL):string{
         </template>
         <template #default>
             <div class="contributors">
-                <a v-for="userinfo of gitHubContributors" class="contributor" :href="userinfo.githubUrl" :key="userinfo.email">
+                <a v-for="userinfo of articleGitHubInfo.gitHubContributors" class="contributor" :href="userinfo.githubUrl" :key="userinfo.email">
                     <div class="contributor-img">
                         <img class="contributor-img-img" v-if="userinfo.avatarUrl" :src="githubAvatarUrlAddSize(userinfo.avatarUrl)" :alt="userinfo.name">
                         <div  class="contributor-img-div" v-else>{{ userinfo.name.charAt(0) }}</div>

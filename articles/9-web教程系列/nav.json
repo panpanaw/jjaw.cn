@@ -4,6 +4,10 @@
     "link": "#",
     "items": [
       {
+        "title": "JavaScript数组方法",
+        "link": "/2024/5/26/js-array-method/"
+      },
+      {
         "title": "JavaScript字符串操作",
         "link": "/2024/5/22/js-string-operation/"
       }

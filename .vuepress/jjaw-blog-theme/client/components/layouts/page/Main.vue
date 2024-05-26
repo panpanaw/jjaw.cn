@@ -92,11 +92,11 @@ const { isNavOpen, isAsideOpen } = toRefs(mainState);
         opacity: 1;
         cursor: pointer;
     }
-    .layout:has(.body .nav):has(.body .aside) {
+    /* .layout:has(.body .nav):has(.body .aside) { */
         /* 布局 ./box/StickyContentBox.vue */
         /* --header-blank-height: var(--mobile-menu-height); */
-        --header-blank-height: 0rem;
-    }
+        /* --header-blank-height: 0rem; */
+    /* } */
 
     .layout:has(.body .nav):has(.body .aside) .header {
         margin-bottom: 0rem;
@@ -117,12 +117,12 @@ const { isNavOpen, isAsideOpen } = toRefs(mainState);
         opacity: 1;
         cursor: pointer;
     }
-    .layout:has(.body .nav),
-    .layout:has(.body .aside) {
+    /* .layout:has(.body .nav),
+    .layout:has(.body .aside) { */
         /* 布局 ./box/StickyContentBox.vue */
         /* --header-blank-height: var(--mobile-menu-height); */
-        --header-blank-height: 0rem;
-    }
+        /* --header-blank-height: 0rem; */
+    /* } */
 
     .layout:has(.body .nav) .header,
     .layout:has(.body .aside) .header {
@@ -152,7 +152,7 @@ const { isNavOpen, isAsideOpen } = toRefs(mainState);
     justify-content: space-between;
     align-items: center;
     padding: 0 0.5rem;
-    z-index: 99;
+    z-index: 90;
 }
 
 @media (max-width: 480px) {
@@ -194,7 +194,7 @@ const { isNavOpen, isAsideOpen } = toRefs(mainState);
     position: sticky;
     top: 0px;
     background-color: var(--theme-c-bg);
-    z-index: 99;
+    z-index: 90;
     margin-bottom: 1rem;
 }
 </style>

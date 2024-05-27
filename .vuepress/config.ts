@@ -38,4 +38,5 @@ export default defineUserConfig({
     }
   }),
   bundler: viteBundler(),
+  public: `${__dirname}/public`,
 })

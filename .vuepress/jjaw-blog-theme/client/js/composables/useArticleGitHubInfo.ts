@@ -13,8 +13,23 @@ export type GethubUserContributor = {
     avatarUrl?: string; //头像
 }
 
+/** 去重，相同邮箱的用户认为是同一个用户，并将提交次数求和 */
+function deduplicationUser(users:GitContributor[]){
+    const map = new Map<string,GitContributor>();
+    for(const user of users){
+        const mapUser = map.get(user.email);
+        if(mapUser){
+            mapUser.commits+=user.commits;
+            continue;
+        }
+        map.set(user.email,{...user});
+    }
+    return [...map.values()];
+}
+
 /* 异步加载的，加载完成之后更新 */
 export function useGetGithubUserInfo(users:GitContributor[]){
+    users = deduplicationUser(users);//去重
     const gethubUserContributors = reactive<GethubUserContributor[]>([]);
     for(const user of users){
         const gitUser = reactive<GethubUserContributor>({
